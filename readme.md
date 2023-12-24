@@ -13,6 +13,8 @@
 7) Command to create Devlopment Build: npx parcel index.html
 *The development buil is get stored in the 'dist' directory.
 8) Command to create Production Build: npx parcel build index.html
+9) Configuring BrowsersList inside package.json file.
+10) Finally, we have build our own React App from scratch.
 ```
 
 ### What is npm?
@@ -116,4 +118,9 @@ It's bad because:
 1) Its a npm package. 
 2) Its used to make our app compatible to other/older browsers.
 3) In order to tell BrowsersList to which browsers we want to make our project compatible with, we need to configure it.
+    "browserslist" : [
+        "last 2 version",
+        "cover 50% in US",
+        "last 2 firefox version",
+    ]
 ```

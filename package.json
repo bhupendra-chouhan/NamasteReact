@@ -23,5 +23,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "last 2 firefox version",
+    "cover 80% in IN"
+  ]
 }
