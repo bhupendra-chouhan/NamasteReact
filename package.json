@@ -1,0 +1,27 @@
+{
+  "name": "practicals",
+  "version": "1.0.0",
+  "description": "Lets Ignite our app",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhupendrachouhan19/NamasteReact.git"
+  },
+  "keywords": [],
+  "author": "Bhupendra Chouhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhupendrachouhan19/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/Bhupendrachouhan19/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
