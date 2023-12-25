@@ -133,9 +133,9 @@ It's bad because:
 
 ---
 
-##*Episode: 3 (Laying the Foundation)*
+## *Episode: 3 (Laying the Foundation)*
 
-###Steps to create a react app from scratch:
+### Steps to create a react app from scratch:
 
 ```
 11) Configuring "script" inside the package.json file.
