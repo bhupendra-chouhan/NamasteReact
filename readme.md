@@ -1,6 +1,12 @@
-#Episode: 2 (Igniting Our App)
+# <div style="text-align: center; color: #E3651D;" markdown="1">Episode wise React JS HandWritten / HandTyped Notes</div>
 
-###Steps to create a react app from scratch:
+#### <div style="text-align: center; color: #008170;" markdown="1">⬇️(Scroll Down to reach your required episode)⬇️</div>
+
+---
+
+## *Episode: 2 (Igniting Our App)*
+
+### Steps to create a react app from scratch:
 
 ```
 1) Initialising npm using command : npm init
@@ -118,9 +124,34 @@ It's bad because:
 1) Its a npm package. 
 2) Its used to make our app compatible to other/older browsers.
 3) In order to tell BrowsersList to which browsers we want to make our project compatible with, we need to configure it.
-    "browserslist" : [
-        "last 2 version",
-        "cover 50% in US",
-        "last 2 firefox version",
-    ]
+"browserslist" : [
+    "last 2 version",
+    "cover 50% in US",
+    "last 2 firefox version",
+]
+```
+
+---
+
+##*Episode: 3 (Laying the Foundation)*
+
+###Steps to create a react app from scratch:
+
+```
+11) Configuring "script" inside the package.json file.
+```
+
+### Adding customised Script for different operations?
+
+```
+inside package.json, add this:
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+
+Now your can run scripts like:
+-> npm run start or npm start
+-> npm run build
 ```
