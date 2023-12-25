@@ -173,3 +173,22 @@ Now your can run scripts like:
 3) It can convert ES6 JS to older version of JS so that older/other browsers can undersand.
 4) It's another important package after Parcel in our react app.
 ```
+
+### What are Components?
+```
+Components are independent and reusable bits of code.
+React Functional Components are simple JS functions that returns a JSX.
+``` 
+
+### Type of Components?
+```
+Components are of two types:
+  -> 1. Class Based Components (OLD)
+  -> 2. Functional Components (NEW)
+``` 
+
+### What are Functional Components?
+```
+1) React Functional Components are simple JS functions that returns a JSX. 
+2) Since JSX is a react element. Therefore, JS Functions that returns a react element is called a Functional Component. 
+``` 
