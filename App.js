@@ -13,15 +13,16 @@ const HeadingComponent1 = () => {
 // console.log(<HeadingComponent1/>) // returns object
 
 // Method-2:
-const HeadingComponent2 = () => <h1>This is comming from a functional component 2.</h1>
+const HeadingComponent2 = () => (
+  <h1>This is comming from a functional component 2.</h1>
+);
 
 // Method-3:
 const HeadingComponent3 = () => (
-    <div id="Container">
-        <h1>This is comming from a functional component 3.</h1>
-    </div>
+  <div id="Container">
+    <h1>This is comming from a functional component 3.</h1>
+  </div>
 );
-
 
 /*
  Nesting in React Component (aka Component Composition) :
@@ -34,26 +35,30 @@ const HeadingComponent3 = () => (
 
 // creating a react component
 const InnerComponent = () => (
-    <h3 id="inner_component">Comming from InnerComponent.</h3>
-)
+  <h3 id="inner_component">Comming from InnerComponent.</h3>
+);
 
 const num = 500;
+// creating a react element
+const title = (
+  <div>
+    <h3 id="Title">Comming from Title Component.</h3>
+  </div>
+);
 
 const OuterComponent = () => (
   <div id="outer_component">
+    {title}
     This is comming from OuterComponent.
     <InnerComponent />
-    {Title}
+    <InnerComponent></InnerComponent>
+    {InnerComponent()}    
     This is the value of num + 2 = {num + 2}
   </div>
 );
 
-// creating a react element
-const Title = (
-  <div>
-    <h3 id="Title">Comming from Title Component.</h3>
-    <OuterComponent />
-  </div>
-);
 
-root.render(<OuterComponent />);
+// Different ways you can render components:
+// root.render(<OuterComponent/>); // Method 1
+// root.render(<OuterComponent></OuterComponent>); // Method 1
+root.render(OuterComponent()); // Method 1

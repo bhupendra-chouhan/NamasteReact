@@ -164,6 +164,7 @@ Now your can run scripts like:
 3) React is different and JSX is different. We can write react applications without using JSX.
 4) JSX is not HTML in JS, but its has HTML or XML like syntax to it.
 5) If we have to give an Attribute to a tag, then we have to name them in Camel Case(like: className, tabIndex, etc.).
+6) JSX can prevent Cross-Site Scripting(XSS) Attack.
 ```
 
 ### What is Babel? What does Babel do?
@@ -196,5 +197,21 @@ Components are of two types:
 
 ### What is Component Compositions?
 ```
-It's basically nesting of one component inside another component
+1) It's basically nesting of one component inside another component.
+2) In JSX we can put:
+  a. Component inside Component
+  b. Component inside React Element
+  c. React Element inside React Element
+  d. React Element inside Component
 ```
+
+### What does .render({}) do?
+```
+1) .render({}) takes Object that can be a:
+    a. 'React Element' as a 'Variable' or 
+    b. 'React Component' as a 'Tag')
+2) It replaces the content inside the "root" element with the React Component which it takes as an argument.
+```
+
+---
+
