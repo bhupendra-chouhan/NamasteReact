@@ -177,7 +177,7 @@ Now your can run scripts like:
 ### What are Components?
 ```
 Components are independent and reusable bits of code.
-React Functional Components are simple JS functions that returns a JSX.
+React Functional Components are simple JS functions with 'PascalCase' naming convention that returns a JSX.
 ``` 
 
 ### Type of Components?
@@ -191,4 +191,10 @@ Components are of two types:
 ```
 1) React Functional Components are simple JS functions that returns a JSX. 
 2) Since JSX is a react element. Therefore, JS Functions that returns a react element is called a Functional Component. 
+3) Naming convention : PascalCase
 ``` 
+
+### What is Component Compositions?
+```
+It's basically nesting of one component inside another component
+```
