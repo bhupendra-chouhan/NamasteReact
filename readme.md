@@ -163,10 +163,13 @@ Now your can run scripts like:
 2) It's makes the traditional way of creating React Elements, way more easy and intuit.
 3) React is different and JSX is different. We can write react applications without using JSX.
 4) JSX is not HTML in JS, but its has HTML or XML like syntax to it.
+5) If we have to give an Attribute to a tag, then we have to name them in Camel Case(like: className, tabIndex, etc.).
 ```
 
 ### What is Babel? What does Babel do?
 ```
 1) Babel is a JS compiler or transpiler.
-2) It converts JSX into the code that browser/JS enginer/react undersands.
+2) It converts JSX into the react code that browser/JS enginer/react undersands.
+3) It can convert ES6 JS to older version of JS so that older/other browsers can undersand.
+4) It's another important package after Parcel in our react app.
 ```
