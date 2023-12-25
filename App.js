@@ -32,15 +32,28 @@ const HeadingComponent3 = () => (
     </div>;
 */
 
+// creating a react component
 const InnerComponent = () => (
     <h3 id="inner_component">Comming from InnerComponent.</h3>
 )
 
+const num = 500;
+
 const OuterComponent = () => (
-    <div id="outer_component">
-        This is comming from OuterComponent.
-        <InnerComponent/> 
-    </div>
-)
+  <div id="outer_component">
+    This is comming from OuterComponent.
+    <InnerComponent />
+    {Title}
+    This is the value of num + 2 = {num + 2}
+  </div>
+);
+
+// creating a react element
+const Title = (
+  <div>
+    <h3 id="Title">Comming from Title Component.</h3>
+    <OuterComponent />
+  </div>
+);
 
 root.render(<OuterComponent />);
