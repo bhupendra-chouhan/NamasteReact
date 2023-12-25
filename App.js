@@ -1,33 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/*
-
-  <div id="parent">
-      <div id="child" key="0">
-          <h1 key="0">I am an h1 tag</h1>
-          <h2 key="1">I am an h2 tag</h2>
-      </div>
-      <div id="child2" key="1">
-          <h1 key="0">I am an h1 tag</h1>
-          <h2 key="1">I am an h2 tag</h2>
-      </div>
-  </div>
-
-*/
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const heading1 = React.createElement("h1", {key: "0"}, "I am an h1 tag");
-const heading2 = React.createElement("h2", {key: "1"}, "I am an h2 tag");
+// creating an element using react:
+const heading1 = React.createElement(
+  "h1",
+  { id: "heading1", key: "0" },
+  "This is heading 1"
+);
+console.log(heading1); // returns an object
 
-const child = React.createElement("div", { id: "child", key: "0" }, [heading1, heading2]); // creating sibling elements
+// creating an element in JSX:
+const headingJSX = (
+  <h2 id="headingJSX" key={0}>
+    This is a JSX heading
+  </h2>
+);
+console.log(headingJSX); // returns an object
 
-const child2 = React.createElement("div", { id: "child2", key:"1" }, [
-  heading1,
-  heading2,
-]); // creating sibling elements
+// root.render(heading1)
+root.render(headingJSX);
 
-const parent = React.createElement("div", { id: "parent" }, [child, child2]); // creating nested elements
-
-root.render(parent);
+// root.render(
+//   <p id="paraJSX" key={0}>
+//     This is a JSX heading
+//   </p>
+// );

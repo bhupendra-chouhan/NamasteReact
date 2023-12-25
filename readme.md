@@ -155,3 +155,18 @@ Now your can run scripts like:
 -> npm run start or npm start
 -> npm run build
 ```
+
+### What and why JSX (JavaScript XML)?
+
+```
+1) It's a syntax extension to JavaScript.
+2) It's makes the traditional way of creating React Elements, way more easy and intuit.
+3) React is different and JSX is different. We can write react applications without using JSX.
+4) JSX is not HTML in JS, but its has HTML or XML like syntax to it.
+```
+
+### What is Babel? What does Babel do?
+```
+1) Babel is a JS compiler or transpiler.
+2) It converts JSX into the code that browser/JS enginer/react undersands.
+```
