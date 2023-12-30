@@ -1,64 +1,115 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// Methods for Creating a Functional Component(using simple JS Function):
-// Method-1:
-const HeadingComponent1 = () => {
-  return <h1>This is comming from a functional component 1.</h1>;
-};
-
-// console.log(HeadingComponent1) // returns the anonymous function declaration
-// console.log(<HeadingComponent1/>) // returns object
-
-// Method-2:
-const HeadingComponent2 = () => (
-  <h1>This is comming from a functional component 2.</h1>
-);
-
-// Method-3:
-const HeadingComponent3 = () => (
-  <div id="Container">
-    <h1>This is comming from a functional component 3.</h1>
-  </div>
-);
-
 /*
- Nesting in React Component (aka Component Composition) :
+Basic Components Layout for out app:
 
-    <div id="outer_component">
-    This is comming from OuterComponent.
-    <h3 id="inner_component">Comming from InnerComponent.</h3>
-    </div>;
+<Header/>
+  -<Logo/>
+  -<NavItems/>
+<Body/>
+  -<Search/>
+  -<RestaurantContainer/>
+    --<RestaurantCard/>
+      ---Img
+      ---Name of the Restaurant, Start Rating, cuisine, Delivery Time
+<Footer/>
+    -<Copyright/>
+    -<Links/>
+    -<Address/>
+    -<Contact/>
 */
 
-// creating a react component
-const InnerComponent = () => (
-  <h3 id="inner_component">Comming from InnerComponent.</h3>
-);
+/* Styling Section: START*/
 
-const num = 500;
-// creating a react element
-const title = (
-  <div>
-    <h3 id="Title">Comming from Title Component.</h3>
+const styleResCard = {
+  backgroundColor: "grey",
+  color: "white"
+}
+
+/* Styling Section: END*/
+
+/* Component Section: START */
+
+const Header = () => (
+  <div className="header">
+    <div>
+      <img
+        className="logo"
+        src="https://png2.cleanpng.com/sh/d27718d216ae87372e252b1e8310fae4/L0KzQYm3VMIxN6h9j5H0aYP2gLBuTgJma5p1fZ9sb3BuebBuTfNpbZcyfNt8aD3pf7FrTcVibGpnfaYBOHG2crS4TsEyOWMATqo7MUW1RIO4WcQ3OmY7TqQ3cH7q/kisspng-recipe-cooking-chef-dish-food-5ad9be468a3bc1.1112968215242194625662.png"
+        alt="company logo"
+      />
+    </div>
+    <div className="nav-items">
+      <ul>
+        <li key={0}>Home</li>
+        <li key={1}>About Us</li>
+        <li key={2}>Contact Us</li>
+        <li key={3}>CartIcon</li>
+      </ul>
+    </div>
   </div>
 );
 
-const OuterComponent = () => (
-  <div id="outer_component">
-    {title}
-    This is comming from OuterComponent.
-    <InnerComponent />
-    <InnerComponent></InnerComponent>
-    {InnerComponent()}    
-    This is the value of num + 2 = {num + 2}
+const Search = () => {
+  
+}
+
+const RestaurantCard = () => {
+  return (
+    <div className="res-card" style={styleResCard}>
+      <img
+        className="foodLogo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/bgqoc4mrafqlmj1zv49n"
+        alt="food-logo"
+      />
+      <h3>Meghana Foods</h3> 
+      <h4>Biryani, North Indiam, South Indian, Chinese, Seafood</h4> 
+      <h4>4.5</h4> 
+      <h4>38 minutes</h4> 
+    </div>
+  );
+}
+
+const Body = () => (
+  <div className="body">
+    <div className="search">Search BOX</div>
+    <div className="res-container">
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+      <RestaurantCard/>
+    </div>
   </div>
 );
 
+const Footer = () => <div className="footer"></div>;
 
-// Different ways you can render components:
-// root.render(<OuterComponent/>); // Method 1
-// root.render(<OuterComponent></OuterComponent>); // Method 1
-root.render(OuterComponent()); // Method 1
+const AppLayout = () => (
+  <div className="app">
+    <Header />
+    <Body />
+    <Footer />
+  </div>
+);
+
+/* Component Section: END */
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<AppLayout />);

@@ -225,18 +225,18 @@ Planning Includes steps given below:
 1) Design a wireframe/UI (go to: ./Episode/wireframe.png)
 2) Low level planning, it includes:
   a. Think of components your app will going to have like:
-    <Header/>
-      -<Logo/>
-      -<NavItems/>
-    <Body/>
-      -<Search/>
-      -<RestaurantContainer/>
-        --<RestaurantCard/>
-    <Footer/>
-       -<Copyright/>
-       -<Links/>
-       -<Address/>
-       -<Contact/>
+      <Header/>
+        -<Logo/>
+        -<NavItems/>
+      <Body/>
+        -<Search/>
+        -<RestaurantContainer/>
+          --<RestaurantCard/>
+      <Footer/>
+        -<Copyright/>
+        -<Links/>
+        -<Address/>
+        -<Contact/>
 
 
 ```

@@ -1,3 +1,62 @@
-*{
-    background-color: greenyellow;
+* {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100vw;
+}
+
+.header .logo {
+    width: 5rem;
+}
+
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-items > ul > li {
+    padding: 0 4rem;
+    font-size: 2rem;
+}
+
+.body {
+    width: 100vw;
+    border: solid 2px grey;
+}
+
+.search {
+    padding: 10px;
+    display: flex;
+    transform: translate(-50%);
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: solid 2px brown; */
+}
+
+.res-card {
+    width: 200px;
+    height: 300px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.res-card :hover {
+    /* border: solid 2px green; */
+    cursor: pointer;
+}
+
+.res-card > .foodLogo {
+    width: 100%;
+    border-radius: 15px;
 }
