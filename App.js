@@ -24,8 +24,8 @@ Basic Components Layout for out app:
 
 const styleResCard = {
   backgroundColor: "grey",
-  color: "white"
-}
+  color: "white",
+};
 
 /* Styling Section: END*/
 
@@ -51,11 +51,9 @@ const Header = () => (
   </div>
 );
 
-const Search = () => {
-  
-}
+const Search = () => {};
 
-const RestaurantCard = () => {
+const RestaurantCard = ({resname, cuisine, rating, deliverytime}) => {
   return (
     <div className="res-card" style={styleResCard}>
       <img
@@ -63,37 +61,24 @@ const RestaurantCard = () => {
         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/bgqoc4mrafqlmj1zv49n"
         alt="food-logo"
       />
-      <h3>Meghana Foods</h3> 
-      <h4>Biryani, North Indiam, South Indian, Chinese, Seafood</h4> 
-      <h4>4.5</h4> 
-      <h4>38 minutes</h4> 
+      <h2>{resname}</h2>
+      <h5>{cuisine}</h5>
+      <h4>{rating}</h4>
+      <h4>{deliverytime} minutes</h4>
     </div>
   );
-}
+};
 
 const Body = () => (
   <div className="body">
     <div className="search">Search BOX</div>
     <div className="res-container">
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
-      <RestaurantCard/>
+      <RestaurantCard
+        resname="Meghana Foods"
+        cuisine="Biryani, North Indiam, South Indian, Chinese, Seafood"
+        rating="4.5"
+        deliverytime="38"
+      />
     </div>
   </div>
 );

@@ -237,6 +237,11 @@ Planning Includes steps given below:
         -<Links/>
         -<Address/>
         -<Contact/>
+```
 
-
+### What are Props?
+```
+  1) These are the objects where the value of attributes of a tag is stored. 
+  2) "props" stands for "Properties".
+  3) Passign "props" to a component, is similar to passing arguments to a function.
 ```

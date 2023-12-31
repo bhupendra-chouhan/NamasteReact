@@ -35,7 +35,6 @@
 .search {
     padding: 10px;
     display: flex;
-    transform: translate(-50%);
 }
 
 .res-container {
@@ -49,6 +48,7 @@
     height: 300px;
     padding: 5px;
     margin: 10px;
+    border-radius: 15px;
 }
 
 .res-card :hover {
