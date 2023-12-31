@@ -53,7 +53,7 @@ const Header = () => (
 
 const Search = () => {};
 
-const RestaurantCard = ({resname, cuisine, rating, deliverytime}) => {
+const RestaurantCard = (props) => {
   return (
     <div className="res-card" style={styleResCard}>
       <img
@@ -61,10 +61,10 @@ const RestaurantCard = ({resname, cuisine, rating, deliverytime}) => {
         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/bgqoc4mrafqlmj1zv49n"
         alt="food-logo"
       />
-      <h2>{resname}</h2>
-      <h5>{cuisine}</h5>
-      <h4>{rating}</h4>
-      <h4>{deliverytime} minutes</h4>
+      <h2>{props.resname}</h2>
+      <h5>{props.cuisine}</h5>
+      <h4>{props.rating}</h4>
+      <h4>{props.deliverytime} minutes</h4>
     </div>
   );
 };
