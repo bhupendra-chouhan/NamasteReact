@@ -53,7 +53,7 @@ const Header = () => (
 
 const Search = () => {};
 
-const RestaurantCard = (props) => {
+const RestaurantCard = ({...props}) => {
   return (
     <div className="res-card" style={styleResCard}>
       <img
