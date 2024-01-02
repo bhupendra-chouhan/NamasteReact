@@ -1649,7 +1649,11 @@ const Header = () => (
 const Search = () => {};
 
 const RestaurantCard = (props) => {
-  const { resname, cuisine, rating, deliverytime, cloudinaryImageId } = props; // object destructuring
+  const resOD = props?.resObejectData?.info;
+  const { name, cuisines, avgRating, sla, cloudinaryImageId } = resOD; // object destructuring
+  
+  console.log(resOD);
+  
   return (
     <div className="res-card" style={styleResCard}>
       <img
@@ -1660,33 +1664,26 @@ const RestaurantCard = (props) => {
         }
         alt="food-logo"
       />
-      <h2>{resname}</h2>
-      <h5>Cuisines: {cuisine.join(", ")}</h5>
-      <h4>Avg. Rating: {rating}</h4>
-      <h4>Delivery Time: {deliverytime} minutes</h4>
+      <h2>{name}</h2>
+      <h5>Cuisines: {cuisines.join(", ")}</h5>
+      <h4>Avg. Rating: {avgRating}</h4>
+      <h4>Delivery Time: {sla.deliveryTime} minutes</h4>
     </div>
   );
 };
 
-const Body = (props) => {
-  const { resData } = props;
-
-  // resData.forEach((ele) => console.log(ele.info.name));
+const Body = () => {
   return (
     <div className="body">
       <div className="search">Search BOX</div>
       <div className="res-container">
-        {resData.map((ele, idx) => {
-          return (
-          <RestaurantCard
-            resname={ele.info.name}
-            cuisine={ele.info.cuisines}
-            rating={ele.info.avgRating}
-            deliverytime={ele.info.sla.deliveryTime}
-            cloudinaryImageId={ele.info.cloudinaryImageId}
-            key={idx}
-          />
-        )})}
+        {
+          resData.map((resEle,idx) => {
+            return (
+              <RestaurantCard resObejectData={resEle} key={idx} />
+            )
+          })
+        }
       </div>
     </div>
   );
