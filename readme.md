@@ -244,4 +244,16 @@ Planning Includes steps given below:
   1) These are the objects where the value of attributes of a tag is stored. 
   2) "props" stands for "Properties".
   3) Passign "props" to a component, is similar to passing arguments to a function.
+  4) Whenever we have to pass in data to a particular component we pass it as a "prop"
+```
+
+### What is Config Driven UI?
+```
+  Config-driven UI is a technique that allows you to create user interfaces based on a configuration file, such as JSON, or a TypeScript file that defines the layout and content of the UI components. 
+```
+
+### What is Optional Chaining Operator(?.)?
+```
+  Let's say we are trying to access a key or property  inside a 
+
 ```
