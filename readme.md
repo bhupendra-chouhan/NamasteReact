@@ -276,3 +276,14 @@ console.log(person.vehicleCar) // undefined
 console.log(vehicleCar1) 
 console.log(vehicleCar2)
 ```
+
+### Why should we use the "key" attribute everytime we use a loop to iterate over an iterator in ReactJS?
+```
+1) In ReactJS, when you're iterating over an array and rendering components based on its elements, it's important to include a "key" attribute for each rendered component. 
+2) The "key" attribute serves as a unique identifier for each component in the list. React uses this identifier to efficiently update the virtual DOM and determine which components need to be added, removed, or updated when the underlying data changes.
+3) We generally give 'unique values or IDs' to the 'key attribute'.
+4) When using .map(), .filter(), .reduce() or .forEach() we can use 'index' as a 'key' 
+5) Since using "key" attributes in big projects can led to inconsistency, thats why we got useId() hook in React. 
+```
+
+### 

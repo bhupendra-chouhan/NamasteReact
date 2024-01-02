@@ -1678,9 +1678,9 @@ const Body = () => {
       <div className="search">Search BOX</div>
       <div className="res-container">
         {
-          resData.map((resEle,idx) => {
+          resData.map((resEle) => {
             return (
-              <RestaurantCard resObejectData={resEle} key={idx} />
+              <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
             )
           })
         }
