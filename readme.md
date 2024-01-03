@@ -285,5 +285,30 @@ console.log(vehicleCar2)
 4) When using .map(), .filter(), .reduce() or .forEach() we can use 'index' as a 'key' 
 5) Since using "key" attributes in big projects can led to inconsistency, thats why we got useId() hook in React. 
 ```
-
 ### 
+
+---
+
+## *Episode: 5 (Let's get Hooked)*
+
+### Types of import/export?
+```
+1) Default Import/Export:
+    a)  Default Exporting:
+      export default VarName;
+
+    b)  Default Importing:
+      import VarName from "./path";
+
+2) Named Import/Export:
+    a)  Named Exporting:
+      export {VarName1, VarName2};
+      or
+      export const VarName1={};
+      export const VarName2={};
+      
+    b)  Named Importing:
+      import {VarName1, VarName2} from "./path";
+
+NOTE: If we use Default and Named export at the same time in a file(i.e. fileA), then in the file where we are importing(i.e. fileB), we can do import either using 'Default or Named Import'
+```
