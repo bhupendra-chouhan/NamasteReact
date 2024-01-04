@@ -3,25 +3,24 @@ import { useState } from "react";
 
 const Body = ({ resData }) => {
   // Creating a Local State Variable:
-  const [topResData, setTopResData] = useState(resData);
-  const [deliveryUnderTwentyData, setDeliveryUnderTwentyData] =
-    useState(resData);
-  
-  const [dataToRender, setDataToRender] = useState(resData);
+  const [topResData, _setTopResData] = useState(resData);
+  const [deliveryUnderTwentyData, _setDeliveryUnderTwentyData] = useState(resData);
 
-  console.log(dataToRender);
+  const [dataToRender, _setDataToRender] = useState(resData); 
+
+  const eventHandler = (_e) => {
+    _setTopResData(
+      resData.filter((resEle) => resEle.info.avgRating > 4.2)
+    );
+    _setDataToRender(topResData);
+  } 
 
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn top-res"
-          onClick={() => {
-            setTopResData(
-              topResData.filter((resEle) => resEle.info.avgRating > 4.2)
-            );
-            setDataToRender(topResData);
-          }}
+          onClick={eventHandler}
         >
           Top Rate Restaurant
         </button>
@@ -29,20 +28,29 @@ const Body = ({ resData }) => {
         <button
           className="filter-btn delivery-under-twenty"
           onClick={() => {
-            setDeliveryUnderTwentyData(
+            _setDeliveryUnderTwentyData(
               deliveryUnderTwentyData.filter(
                 (resEle) => resEle.info.sla.deliveryTime <= 20
               )
             );
-            setDataToRender(deliveryUnderTwentyData);
+            _setDataToRender(deliveryUnderTwentyData);
           }}
         >
           Delivery under 20 Min
         </button>
+
+        <button
+          className="filter-btn clear-filter"
+          onClick={() => {
+            _setDataToRender(resData);
+          }}
+        >
+          Clear All Filters
+        </button>
       </div>
 
       <div className="res-container">
-        {dataToRender.map((resEle) => {
+        {dataToRender?.map((resEle) => {
           return (
             <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
           );
