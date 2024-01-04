@@ -310,5 +310,22 @@ console.log(vehicleCar2)
     b)  Named Importing:
       import {VarName1, VarName2} from "./path";
 
-NOTE: If we use Default and Named export at the same time in a file(i.e. fileA), then in the file where we are importing(i.e. fileB), we can do import either using 'Default or Named Import'
+NOTE: If we use Default and Named export at the same time in a file(i.e. fileA), then in the file where we are importing(i.e. fileB), we can do import either using 'Default or Named Import'.
+```
+
+## <div style="text-align: center; color: #E3651D; font-style: italic;" markdown="1">-: React Hooks :-</div>
+
+### What are React Hooks?
+```
+1) BTS React Hooks are normal JavaScript Utility functions written Facebook developer and these react.
+2) Two most used React Hooks are:
+    a) UseState()
+    b) UseEffect()
+```
+
+### How useState() Hook works?
+```
+1) Local State Variable(Super Powerful Variable provide by ReactJS): 
+      a. It maintains the state of a component.
+      b. Its scope is inside of the component inside which it is declared.
 ```
