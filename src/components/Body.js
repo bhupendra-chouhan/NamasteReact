@@ -4,24 +4,20 @@ import { useState } from "react";
 const Body = ({ resData }) => {
   // Creating a Local State Variable:
   const [topResData, _setTopResData] = useState(resData);
-  const [deliveryUnderTwentyData, _setDeliveryUnderTwentyData] = useState(resData);
+  const [deliveryUnderTwentyData, _setDeliveryUnderTwentyData] =
+    useState(resData);
 
-  const [dataToRender, _setDataToRender] = useState(resData); 
+  const [dataToRender, _setDataToRender] = useState([]);
 
   const eventHandler = (_e) => {
-    _setTopResData(
-      resData.filter((resEle) => resEle.info.avgRating > 4.2)
-    );
+    _setTopResData(resData.filter((resEle) => resEle.info.avgRating > 4.2));
     _setDataToRender(topResData);
-  } 
+  };
 
   return (
     <div className="body">
       <div className="filter">
-        <button
-          className="filter-btn top-res"
-          onClick={eventHandler}
-        >
+        <button className="filter-btn top-res" onClick={eventHandler}>
           Top Rate Restaurant
         </button>
 
@@ -42,7 +38,7 @@ const Body = ({ resData }) => {
         <button
           className="filter-btn clear-filter"
           onClick={() => {
-            _setDataToRender(resData);
+            _setDataToRender([]);
           }}
         >
           Clear All Filters
@@ -50,11 +46,17 @@ const Body = ({ resData }) => {
       </div>
 
       <div className="res-container">
-        {dataToRender?.map((resEle) => {
-          return (
-            <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
-          );
-        })}
+        {dataToRender.length == 0
+          ? resData.map((resEle) => {
+              return (
+                <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
+              );
+            })
+          : dataToRender?.map((resEle) => {
+              return (
+                <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
+              );
+            })}
       </div>
     </div>
   );

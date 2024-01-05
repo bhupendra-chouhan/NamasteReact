@@ -317,10 +317,22 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 
 ### What are React Hooks?
 ```
-1) BTS React Hooks are normal JavaScript Utility functions written Facebook developer and these react.
+1) BTS React Hooks are normal JavaScript Utility functions written by Facebook developer and it let you "hook into" React.
 2) Two most used React Hooks are:
     a) UseState()
     b) UseEffect()
+```
+
+### props v/s state?
+```
+1) Props:
+    a. Props is the piece of that data in the form of objects that we pass from parent to child component.
+    b. We can't pass props from child to parent in React.
+
+2) State:
+    a. It's something(i.e. data) that changes with time, due to the user interaction with the app.
+    b. When a there is a state change inside a component, the React rerenders that component with the updated state.
+    c. Can you compute it based on existing state or props in your component? If so, it definitely isn’t state!
 ```
 
 ### How useState() Hook works?
@@ -328,4 +340,51 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 1) Local State Variable(Super Powerful Variable provide by ReactJS): 
       a. It maintains the state of a component.
       b. Its scope is inside of the component inside which it is declared.
+2) Whenever a state variable changes/updates, the React re-renders the component.
+3) Syntax:
+            const [state, setState] = useState('initialState');
+    **Here useState() returns a regular Array.
+```
+**Learn all about implementation of state in React 👉 [Click Here](https://react.dev/learn/thinking-in-react)
+
+### How React uses Reconciliation Algorithm(aka Diffing Algorithm)?
+```
+1) The reconciliation algorithm, often referred to as the diffing algorithm, is responsible for comparing the previous virtual DOM with the new one and determining the most efficient way to update the actual DOM. React aims to make this process as optimized as possible to ensure that UI updates are fast and seamless.
+2) Reconciliation is the process by which React determines what changes need to be made to the UI based on changes to the application state.
+3) The Diff Algorithm find out the difference between updated v/s previous version of DOM.
+```
+
+### What is Virtual DOM?
+```
+1) It's an representation of actual DOM.
+2) At the end of the day its a JavaScript Object representation of actual DOM.
+3) Whenever there is any change in the state variable, react will find out the difference between virtual DOM and then update DOM and re-render the component 
+```
+
+### What is React-Fiber?
+```
+1) React 16 is the first version of React built on top of a new core architecture, codenamed “Fiber.”
+2) React Fiber is a completely backward-compatible rewrite of the old reconciler. This new reconciliation algorithm from React is called Fiber Reconciler. The name comes from fiber, which it uses to represent the node of the DOM tree.
+3) At a high level, the Fiber architecture is a new way of reconciling the virtual DOM in React.
+```
+
+### What is Single Responsibility Principle?
+```
+It says ,a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+```
+
+### Approach to build a static React app?
+```
+1) Top-Down Approach:
+  a. We start building the components from top of the hierarchy to the bottom of the tree.
+  b. Generally used for small projects
+
+2) Bottom-Up Approach:
+  We start building the components from bottom of the hierarchy to up in the tree.
+  b. Generally used for big projects.
+```
+
+### What is One-Way Data Flow?
+```
+ It's when the data either flows down from the top-level component to the ones at the bottom of the tree or vice-versa.
 ```
