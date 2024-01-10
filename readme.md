@@ -388,3 +388,25 @@ It says ,a component should ideally only do one thing. If it ends up growing, it
 ```
  It's when the data either flows down from the top-level component to the ones at the bottom of the tree or vice-versa.
 ```
+
+---
+
+## *Episode: 6 (Exploring the world)*
+
+### Monolithic v/s Micro-Service Architecture?
+
+### Separation of concerns ?
+
+```
+Seperation of concerns a principle used in programming to separate an application into units, with minimal overlapping between the functions of the individual units.
+```
+
+### Two ways to fetch data from an API ?
+
+```
+Way-1: Less used | Not so good UX
+[App loads] ---> [API Call(lets say it took 500ms to lead)] ---> [Render data on the UI]
+
+Way-2: **Most used method in ReactJS | Better UX**
+[App loads] ---> [Render base UI Skeleton] ---> [API Call] --> [Render the data on the UI]
+```
