@@ -410,3 +410,43 @@ Way-1: Less used | Not so good UX
 Way-2: **Most used method in ReactJS | Better UX**
 [App loads] ---> [Render base UI Skeleton] ---> [API Call] --> [Render the data on the UI]
 ```
+
+### How useEffect Hook work?
+```
+1) The useEffect statements runs by default after every render of the component.
+2) The useEffect statements is executed whenever one of the state variables changes.
+3) The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+```
+
+### What are CORS(Cross-Origin Resource sharing) policies? What happend when CORS are enabled?
+```
+1) CORS is an extension of the same-origin policy. You need it for authorized resource sharing with external third parties. For example, you need CORS when you want to pull data from external APIs that are public or authorized.
+2) When we try to access an API which origin is Swiggy(eternal origin/source) from our Localhost origin and if CORS is disabled in the browser then we won't be able to access that API because in this case API can only be called from it original()
+```
+
+### What is an API?
+```
+1) API(Application Programming Interface) is a way for two or more 1) computer programs to communicate or share resources with each otehr with each other.
+
+2) Endpoints: Endpoints are the locations of the resources.
+
+3) API Endpoint : It's basically the URL to the resources
+```
+
+### Using async/await function to fetch data from the API?
+```
+const fetchData = async () => {
+  const data = await fetch('APIEndpointURL'); // fetching data and returns a promise
+  const dataJSON = await data.json(); // formating the promise into JSON 
+  console.log(dataJSON); // print the fetch data into the JSON format
+} 
+```
+
+### What is the concept of Shimmer UI and Conditional Rendering?
+```
+  Shimmer UI:-
+  A shimmer UI is a version of the UI that doesn't contain actual content, but instead mimics the layout and shapes of the content that will eventually appear. It uses a gradient animation that creates a shimmering effect over the placeholders, giving the user a sense of motion and progress.
+
+  Conditional Rendering:-
+  Rendering based on certain condition.
+```

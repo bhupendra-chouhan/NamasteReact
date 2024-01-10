@@ -1,44 +1,38 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
-const Body = ({ resData }) => {
+const Body = () => {
   // Creating a Local State Variable:
-  const [topResData, _setTopResData] = useState(resData);
-  const [deliveryUnderTwentyData, _setDeliveryUnderTwentyData] =
-    useState(resData);
-
   const [dataToRender, _setDataToRender] = useState([]);
 
-  const eventHandler = (_e) => {
-    _setTopResData(resData.filter((resEle) => resEle.info.avgRating > 4.2));
-    _setDataToRender(topResData);
-  };
+  // _setTopResData(topResData.filter(resEle => resEle.info.avgRating > 4.2));
 
-  return (
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+  const fetchData = async () => {
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+
+    const dataJSON = await data.json();
+    console.log(dataJSON);
+    const valueToRender = dataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    _setDataToRender(valueToRender);
+  }
+
+  return dataToRender.length === 0 ? <Shimmer/>: (
     <div className="body">
       <div className="filter">
-        <button className="filter-btn top-res" onClick={eventHandler}>
+        <button className="filter-btn top-res" onClick={()=>_setDataToRender(dataToRender.filter(resEle => resEle.info.avgRating > 4.2))}>
           Top Rate Restaurant
-        </button>
-
-        <button
-          className="filter-btn delivery-under-twenty"
-          onClick={() => {
-            _setDeliveryUnderTwentyData(
-              deliveryUnderTwentyData.filter(
-                (resEle) => resEle.info.sla.deliveryTime <= 20
-              )
-            );
-            _setDataToRender(deliveryUnderTwentyData);
-          }}
-        >
-          Delivery under 20 Min
         </button>
 
         <button
           className="filter-btn clear-filter"
           onClick={() => {
-            _setDataToRender([]);
+            _setDataToRender(dataToRender);
+            console.log(dataToRender);
           }}
         >
           Clear All Filters
@@ -46,12 +40,8 @@ const Body = ({ resData }) => {
       </div>
 
       <div className="res-container">
-        {dataToRender.length == 0
-          ? resData.map((resEle) => {
-              return (
-                <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
-              );
-            })
+        {dataToRender.length === 0
+          ? <h1>Loading....</h1>
           : dataToRender?.map((resEle) => {
               return (
                 <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
