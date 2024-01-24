@@ -1,3 +1,5 @@
-const Search = (props) => {};
+const Search = (props) => {
+    
+};
 
 export default Search;

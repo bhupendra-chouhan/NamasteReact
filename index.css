@@ -30,27 +30,45 @@
     /* border: solid 2px rgb(29, 199, 57); */
     padding: 0 3rem;
     font-size: 2rem;
+    cursor: pointer;
+}
+
+.log-button {
+    padding: 0 3rem;
+    font-size: 1.5rem;
+    width: 11rem;
+    cursor: pointer;
 }
 
 .body {
     /* border: solid 2px rgb(29, 199, 57); */
 }
 
-/* .search {
+.search {
     padding: 10px;
-    border: solid 2px rgb(29, 199, 57);
+    /* border: solid 2px rgb(29, 199, 57); */
     display: flex;
     width: max-content;
-} */
+justify-content: space-between;
+}
+
+.search-element {
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
+}
 
 .filter {
     width: max-content;
     margin: 10px 0 0 30px;
     /* border: solid red 2px; */
+    display: flex;
     padding: 5px;
     margin: 0 auto;
 }
 
+.filter * {
+    border-radius: 10px;
+}
 .filter > .filter-btn {
     cursor: pointer;
     padding: 0.5rem;

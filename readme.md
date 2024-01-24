@@ -352,6 +352,7 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 1) The reconciliation algorithm, often referred to as the diffing algorithm, is responsible for comparing the previous virtual DOM with the new one and determining the most efficient way to update the actual DOM. React aims to make this process as optimized as possible to ensure that UI updates are fast and seamless.
 2) Reconciliation is the process by which React determines what changes need to be made to the UI based on changes to the application state.
 3) The Diff Algorithm find out the difference between updated v/s previous version of DOM.
+4) Whenever a state variables updates, react triggers a reconciliation cycle(re-renders the conponents).
 ```
 
 ### What is Virtual DOM?

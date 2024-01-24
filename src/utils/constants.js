@@ -2,6 +2,8 @@ const RES_THUMBNAIL_LINK_HEADER =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
 
 const COMPANY_LOGO =
-  "https://png2.cleanpng.com/sh/7a79bc7ad50006f7973b1e82ef9c96ff/L0KzQYm3VMIxN6h9j5H0aYP2gLBuTgJma5p1fZ9sb3BuebBuTfNpbZcyfNt8aD3pf7FrTcVibGpnfaYBOHG2crS4TsEyOWMATqo7MUW1RIO4WcQ3OmY7TqQ3cH7q/kisspng-recipe-cooking-chef-dish-food-5ad9be468a3bc1.1112968215242194625662.png";
+  "https://png2.cleanpng.com/sh/a6c6607a0c5b37ac48bc0473534b10dd/L0KzQoS3V8A1N6drgJH9cnHxg8HokvVvfF5teeJ5eT3pcbTsTcY1aWVpTNVtZUHpQIGCTsU2QGk4S6c6MUa7SIa5U8k5OWo3Tac3cH7q/transparent-happy-face-64a4d4cde1f009.5588335116885239819255.png";
 
-export { RES_THUMBNAIL_LINK_HEADER, COMPANY_LOGO };
+const RESTAURANT_FETCH_API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  
+export { RES_THUMBNAIL_LINK_HEADER, COMPANY_LOGO, RESTAURANT_FETCH_API_LINK };
