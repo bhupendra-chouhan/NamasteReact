@@ -25,17 +25,11 @@ const Body = () => {
       dataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     _setDataToRender(valueToRender);
+    _setFilterdData(valueToRender);
   };
 
   const clearFilterHandler = () => {
-    // resolving the fetchData() Promise
-    fetchData()
-      .then((result) => {
-        console.warn("Fetching data successfull!!!!!", result);
-      })
-      .catch((error) => {
-        console.error("Error in calling fetchData() async function ", error);
-      });
+    _setFilterdData(dataToRender);
   };
 
   return dataToRender.length === 0 ? (
@@ -59,7 +53,7 @@ const Body = () => {
             onClick={() => {
               console.log(searchText);
 
-              _setDataToRender(
+              _setFilterdData(
                 dataToRender.filter((resEle) => {
                   return resEle.info.name
                     .toLowerCase()
@@ -75,8 +69,8 @@ const Body = () => {
         <button
           className="filter-btn top-res"
           onClick={() =>
-            _setDataToRender(
-              dataToRender.filter((resEle) => resEle.info.avgRating > 4.2)
+            _setFilterdData(
+              filterdData.filter((resEle) => resEle.info.avgRating > 4.2)
             )
           }
         >
@@ -95,7 +89,7 @@ const Body = () => {
       </div>
 
       <div className="res-container">
-        {dataToRender?.map((resEle) => {
+        {filterdData?.map((resEle) => {
           return (
             <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
           );
