@@ -344,6 +344,12 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 3) Syntax:
             const [state, setState] = useState('initialState');
     **Here useState() returns a regular Array.
+
+4) Always call/create hooks inside the body of the component aka the function body, because its used for creating local state variables inside your functional component.
+
+5) Try to call/create these hooks on the top, means it should be in the top of function body. Sot that we don't have a lot of inconsistancy in our code, because javascript is a synchronous single-threaded language due to this the code will run line by line.
+
+6) Never create useState hooks inside if-else statements, loops, inner function of a function component.
 ```
 **Learn all about implementation of state in React 👉 [Click Here](https://react.dev/learn/thinking-in-react)
 
@@ -417,6 +423,12 @@ Way-2: **Most used method in ReactJS | Better UX**
 1) The useEffect statements runs by default after every render of the component.
 2) The useEffect statements is executed whenever one of the state variables changes.
 3) The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+4) If there is not dependency array, that means useEffect will be called on every component render
+5) Syntax With v/s without dependency array:
+    a. Syntax without dependecy array:
+      useEffect(()->{})
+    b. Syntax with dependecy array:
+      useEffect(()->{}, [])
 ```
 
 ### What are CORS(Cross-Origin Resource sharing) policies? What happend when CORS are enabled?
@@ -450,4 +462,19 @@ const fetchData = async () => {
 
   Conditional Rendering:-
   Rendering based on certain condition.
+```
+
+--
+
+## *Episode: 7 (Finding the Path)*
+
+### What is React-Router-DOM?
+```
+1) It's a Javascript Library for React use to route, add path to different pages of React app.
+2) It's mostly imported and used in the App.js file of a React App.
+```
+### useRouteError() Hook?
+```
+1) There can be many different reasons for which the requested page can not accessed. So in order to read that reason(message) and show users the specific detail to the user.
+2) We get this useRouterError Hook with the React-Router-DOM Package. 
 ```

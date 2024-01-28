@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { COMPANY_LOGO, RESTAURANT_FETCH_API_LINK } from "../utils/constants";
+import { RESTAURANT_FETCH_API_LINK } from "../utils/constants";
 
 const Body = () => {
   // Creating a Local State Variable:
@@ -10,11 +10,11 @@ const Body = () => {
   const [searchText, _setSearchText] = useState("");
 
   // Whenever a state variables updates, react triggers a reconciliation cycle(re-renders the conponents).
-  // console.log("Body is Rerendered...");
+  console.log("Body is Rerendered...");
 
   useEffect(() => {
     fetchData();
-  }, []);
+  },[searchText]);
 
   const fetchData = async () => {
     const data = await fetch(RESTAURANT_FETCH_API_LINK); // fetch() --> returns a Promise
@@ -51,8 +51,6 @@ const Body = () => {
             className="search-element"
             type="submit"
             onClick={() => {
-              console.log(searchText);
-
               _setFilterdData(
                 dataToRender.filter((resEle) => {
                   return resEle.info.name
@@ -81,7 +79,6 @@ const Body = () => {
           className="filter-btn clear-filter"
           onClick={() => {
             clearFilterHandler();
-            console.log(dataToRender);
           }}
         >
           Clear All Filters
