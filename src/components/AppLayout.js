@@ -1,9 +1,6 @@
 // importing components:
 import Header from "./Header";
-import Body from "./Body";
-import {resData} from "../utils/resData";
 import Footer from "./Footer";
-
 /*
 Basic Components Layout for out app:
 
@@ -23,10 +20,10 @@ Basic Components Layout for out app:
     --<Contact/>
 */
 
-const AppLayout = () => (
+const AppLayout = ({applayout_outlet}) => (
   <div className="app">
     <Header />
-    <Body resData={resData} />
+    {applayout_outlet}
     <Footer />
   </div>
 );
