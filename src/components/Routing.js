@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import AppLayout from "./AppLayout"
 import About from "./About"
 import Contact from "./Contact"
@@ -10,7 +10,7 @@ const Routing = () => {
     const appRouter = createBrowserRouter([
         {
             path: "/",
-            element: <AppLayout applayout_outlet={<Outlet/>}/>,
+            element: <AppLayout />,
             children: [
                 {
                     path: "/",

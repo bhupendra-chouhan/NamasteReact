@@ -1,6 +1,7 @@
 // importing components:
 import Header from "./Header";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 /*
 Basic Components Layout for out app:
 
@@ -20,10 +21,10 @@ Basic Components Layout for out app:
     --<Contact/>
 */
 
-const AppLayout = ({applayout_outlet}) => (
+const AppLayout = () => (
   <div className="app">
     <Header />
-    {applayout_outlet}
+    <Outlet />
     <Footer />
   </div>
 );
