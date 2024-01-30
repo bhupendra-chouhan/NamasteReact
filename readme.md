@@ -423,12 +423,13 @@ Way-2: **Most used method in ReactJS | Better UX**
 1) The useEffect statements runs by default after every render of the component.
 2) The useEffect statements is executed whenever one of the state variables changes.
 3) The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM, and timers.
-4) If there is not dependency array, that means useEffect will be called on every component render
+4) If there is not dependency array, that means useEffect will be called on every component has rendered
 5) Syntax With v/s without dependency array:
     a. Syntax without dependecy array:
       useEffect(()->{})
     b. Syntax with dependecy array:
       useEffect(()->{}, [])
+6) The useEffect function runs after the component has rendered and every time one of the dependencies in the array has changed since the last render. It does not directly get called on every re-render of the component itself; rather, it responds to changes in the specified dependencies.
 ```
 
 ### What are CORS(Cross-Origin Resource sharing) policies? What happend when CORS are enabled?
@@ -476,5 +477,20 @@ const fetchData = async () => {
 ### useRouteError() Hook?
 ```
 1) There can be many different reasons for which the requested page can not accessed. So in order to read that reason(message) and show users the specific detail to the user.
-2) We get this useRouterError Hook with the React-Router-DOM Package. 
+2) We get this useRouterError Hook with the React-Router-DOM Package.
+```
+### Two types of Routing in Web Apps?
+```
+1) Client Side Routing
+2) Server Side Routing
+```
+### Two types of Rendering Techniques?
+```
+1) Client Side Rendering
+2) Server Side Rendering
+```
+
+### What is Dynamic Routing?
+```
+
 ```

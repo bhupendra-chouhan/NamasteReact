@@ -5,6 +5,7 @@ import Contact from "./Contact"
 import Cart from "./Cart"
 import Error from "./Error"
 import Body from "./Body"
+import RestaurantMenu from "./RestaurantMenu"
 
 const Routing = () => {
     const appRouter = createBrowserRouter([
@@ -27,6 +28,10 @@ const Routing = () => {
                 {
                     path: "/my-cart",
                     element: <Cart/>,
+                },
+                {
+                    path: "/restaurants/:resId",  // "/:resId" This part of the URL is Dynamic. This resId can be changed according to the ID of the restaurant.
+                    element: <RestaurantMenu/>,
                 },
             ],
             errorElement: <Error/>,
