@@ -492,5 +492,9 @@ const fetchData = async () => {
 
 ### What is Dynamic Routing?
 ```
+  Dynamic routing refers to the process of generating and navigating to different pages or views in a web application based on parameters or variables, often extracted from the URL, allowing for more flexible and personalized user experiences.
 
+### What is the use of useParams() Hook?
+```
+  The useParams hook in React is used to access and extract parameters from the URL in a route defined by React Router. It allows components to dynamically respond to changes in the URL parameters and retrieve values for further use within the component.
 ```

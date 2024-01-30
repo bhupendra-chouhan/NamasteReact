@@ -89,18 +89,35 @@ justify-content: space-between;
     border-radius: 15px;
     min-width: 5rem;
     min-height: 25rem;
-    border: solid rgb(224, 222, 222) 2px;
+    border: solid 2px rgb(175, 175, 175);
     background-color: rgb(245, 243, 243);
+
+    text-decoration: none;
+    color: black;
 }
 
-.res-card :hover {
-    /* border: solid 2px green; */
+.res-card:hover {
+    background: orange;
     cursor: pointer;
 }
 
-.res-card > .foodLogo {
+.res-card > .foodlogo-container > .foodlogo {
     width: 100%;
     border-radius: 15px;
+}
+
+.foodlogo-container {
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.foodlogo-container > .zoom-in-foodlogo {
+    transition: transform 0.3s ease;
+}
+
+.foodlogo-container > .zoom-in-foodlogo:hover {
+    transform: scale(1.2);
 }
 
 .shimmer-text {
