@@ -2,7 +2,7 @@ const RES_THUMBNAIL_LINK_HEADER =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
 
 const COMPANY_LOGO =
-  "https://png2.cleanpng.com/sh/a6c6607a0c5b37ac48bc0473534b10dd/L0KzQoS3V8A1N6drgJH9cnHxg8HokvVvfF5teeJ5eT3pcbTsTcY1aWVpTNVtZUHpQIGCTsU2QGk4S6c6MUa7SIa5U8k5OWo3Tac3cH7q/transparent-happy-face-64a4d4cde1f009.5588335116885239819255.png";
+  "https://png2.cleanpng.com/sh/24ba5b2d00fa68ae55e1a7e9d745445b/L0KzQoW3UcMxN5d2kJH9cnHxg8HokvVvfF57ed5uboTsfra0kPl7gpIye9puZj3zecvDgb11d6F1gdDwcz3whcTvkv9wdaQyhdN3LXPrdbe0iP9tbJpzf59vcnX2eL3CTfJic5ZpReJyeorkPbnokQBqdKo7TdQEYUXmRoO3VPFmO182TaM5M0W7SYKAUMY3PmY5SaY6M0K2PsH1h5==/transparent-valentine-pizza-chef-pizza-toppings-mushrooms-man-chef-holding-freshly-baked-pizza-happily65b9a5c6204ae3.1510358917066654141323.png";
 
 const RESTAURANT_FETCH_API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
