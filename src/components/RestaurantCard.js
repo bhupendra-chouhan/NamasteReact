@@ -12,7 +12,7 @@ const styleResCard = {
 
 const RestaurantCard = (props) => {
   const resOD = props?.resObejectData?.info;
-  const { name, id, cuisines, avgRating, sla, cloudinaryImageId } = resOD; // object destructuring
+  const { name, id, cuisines, avgRating, sla, cloudinaryImageId } = resOD; // object destructuring  
 
   return (
       <Link to={`/restaurants/${id}`} className="res-card">

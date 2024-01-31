@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border: solid 2px rgb(171, 93, 93);
+    /* border-bottom: solid 2px rgb(171, 93, 93); */
 }
 
 .header .logo {
@@ -49,7 +49,7 @@
     /* border: solid 2px rgb(29, 199, 57); */
     display: flex;
     width: max-content;
-justify-content: space-between;
+    justify-content: space-between;
 }
 
 .search-element {
@@ -91,7 +91,6 @@ justify-content: space-between;
     min-height: 25rem;
     border: solid 2px rgb(175, 175, 175);
     background-color: rgb(245, 243, 243);
-
     text-decoration: none;
     color: black;
 }
@@ -124,3 +123,26 @@ justify-content: space-between;
     color: grey;
     text-align: center;
 }
+
+.about-container {
+    text-align: center;
+    background-color: rgb(237, 161, 47);
+    padding-bottom: 0.4rem;
+    border-radius: 13px;
+}
+
+/* User Component : Start */
+.user-container {
+    /* border: 3px solid orange; */
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    text-align: justify;
+}
+
+.user {
+    text-align: center;
+}
+
+/* User Component : End */

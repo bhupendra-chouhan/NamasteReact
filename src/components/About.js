@@ -1,10 +1,12 @@
 import React from 'react'
+import User from './User'
 
 const About = () => {
   return (
-    <div>
-        <h2>About US</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia voluptatem autem, vel doloribus error maiores sit repellat, eius doloremque nulla voluptate, ipsam officiis accusamus adipisci nihil beatae delectus rem iusto?</p>
+    <div className='about-container'>
+        <h1>About US</h1>
+        <h2 className="about-title" style={{"font-style": "italic", "color": "orangered"}}>CEO</h2>
+        <User />
     </div>
   )
 }

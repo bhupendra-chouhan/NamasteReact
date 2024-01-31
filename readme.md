@@ -477,7 +477,7 @@ const fetchData = async () => {
 ### useRouteError() Hook?
 ```
 1) There can be many different reasons for which the requested page can not accessed. So in order to read that reason(message) and show users the specific detail to the user.
-2) We get this useRouterError Hook with the React-Router-DOM Package.
+2) We get this useRouteError Hook with the React-Router-DOM Package.
 ```
 ### Two types of Routing in Web Apps?
 ```
