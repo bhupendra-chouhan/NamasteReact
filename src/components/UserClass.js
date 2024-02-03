@@ -9,6 +9,8 @@ class UserClass extends React.Component {
       count: 0,
       count2: 0
     };
+
+    console.log("Constructor is Called.")
   }
 
   render() {
@@ -16,8 +18,12 @@ class UserClass extends React.Component {
 
     const {count, count2} = this.state // Destructuring state object
     
+    console.log("render() is called")
+    
     return (
       <div className="user user-container">
+        {console.log("return() is called")}
+
         <div>
           <h1 className="user user-name">Count = {count} &nbsp;</h1>
           <h1 className="user user-name">Count2 = {count2} &nbsp;</h1>
