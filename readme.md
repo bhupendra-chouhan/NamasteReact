@@ -350,6 +350,8 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 5) Try to call/create these hooks on the top, means it should be in the top of function body. Sot that we don't have a lot of inconsistancy in our code, because javascript is a synchronous single-threaded language due to this the code will run line by line.
 
 6) Never create useState hooks inside if-else statements, loops, inner function of a function component.
+
+7) Never update state variable directly just like a regular variable. Always use a .setState("#") method to update the state variable in a Functional Components or this.setSTate({state: "#"}) in Class Components. 
 ```
 **Learn all about implementation of state in React 👉 [Click Here](https://react.dev/learn/thinking-in-react)
 
@@ -493,8 +495,10 @@ const fetchData = async () => {
 ### What is Dynamic Routing?
 ```
   Dynamic routing refers to the process of generating and navigating to different pages or views in a web application based on parameters or variables, often extracted from the URL, allowing for more flexible and personalized user experiences.
+```
 
 ### What is the use of useParams() Hook?
 ```
   The useParams hook in React is used to access and extract parameters from the URL in a route defined by React Router. It allows components to dynamically respond to changes in the URL parameters and retrieve values for further use within the component.
 ```
+
