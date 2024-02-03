@@ -8,8 +8,8 @@ const About = () => {
         <h1>About US</h1>
         <h2 className="about-title" style={{"fontStyle": "italic", "color": "orangered"}}>CEO</h2>
         
-        <User firstname={"Function"}/>
-        <UserClass first_name={"Class"}/>
+        <User firstname={"Function"} lastname={"Chouhan"}/>
+        <UserClass first_name={"Class"} last_name={"Chouhan"}/>
     </div>
   )
 }
