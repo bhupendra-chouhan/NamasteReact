@@ -502,3 +502,41 @@ const fetchData = async () => {
   The useParams hook in React is used to access and extract parameters from the URL in a route defined by React Router. It allows components to dynamically respond to changes in the URL parameters and retrieve values for further use within the component.
 ```
 
+### Lifecycle phases of a Class-Based component?
+```
+Lifecycle phases of clas based componenets are:
+
+1) Mounting:
+
+  a. constructor(): Initializing state and binding methods.
+  
+  b. static getDerivedStateFromProps(): Rarely used, but it allows the component to update its state based on changes in props.
+  
+  c. render(): Determines the component's UI.
+  
+  d. componentDidMount(): Invoked after the component is inserted into the DOM. It's often used for tasks such as fetching data from an API. In functional component we achieve same effect using 'useEffect' Hook.
+
+2) Updating:
+
+  a. static getDerivedStateFromProps(): Similar to the mounting phase, used to update state based on changes in props.
+  
+  b. shouldComponentUpdate(): Decides whether the component should re-render or not. It's a performance optimization method.
+  
+  c. render(): Re-renders the component with updated state or props.
+  
+  d. getSnapshotBeforeUpdate(): Captures information from the DOM before it is potentially changed.
+  
+  e. componentDidUpdate(): Invoked after the component is updated in the DOM.
+
+3) Unmounting:
+
+  a. componentWillUnmount(): Invoked just before a component is unmounted and destroyed. It's used for cleanup tasks.
+
+4) Error Handling:
+
+  a. static getDerivedStateFromError(): Used to update state when an error occurs in a descendant component.
+  
+  b. componentDidCatch(): Invoked after an error has been thrown in a descendant component.
+
+```
+

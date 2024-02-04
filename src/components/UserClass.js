@@ -10,19 +10,24 @@ class UserClass extends React.Component {
       count2: 0
     };
 
-    console.log("Constructor is Called.")
+    console.log("Child Constructor is Called.")
+  }
+  
+  componentDidMount() { // gets executed right after the componenet had rendered
+    console.log("Child componentDidMount")
   }
 
   render() {
     const {first_name, last_name} = this.props // Object Destructing
-
+    
     const {count, count2} = this.state // Destructuring state object
     
-    console.log("render() is called")
+    console.log("Child render() is called")
     
+
     return (
       <div className="user user-container">
-        {console.log("return() is called")}
+        {console.log("Child return() is called")}
 
         <div>
           <h1 className="user user-name">Count = {count} &nbsp;</h1>
