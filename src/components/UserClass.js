@@ -1,4 +1,5 @@
 import React from "react";
+import { USER_DATA_FETCH_API_LINK } from '../utils/constants'
 
 class UserClass extends React.Component {
   constructor (props) {
@@ -6,52 +7,55 @@ class UserClass extends React.Component {
 
     // Declaring Local state variables in a Class component:
     this.state = {
-      count: 0,
-      count2: 0
-    };
+      fullName: "", 
+      userName: "", 
+      location: "",
+      profile_url: "",
+    }
 
-    console.log(props.first_name, "Child Constructor is Called.")
+    // console.log(props.first_name, "Child Constructor is Called.")
   }
-  
+
   componentDidMount() { // gets executed right after the componenet had rendered
-    console.log(this.props.first_name, "Child componentDidMount");
+    // console.log(this.props.first_name, "Child componentDidMount");
 
     // Making API call:
+    this.fetchUser()
+  }
+
+  fetchUser = async() => {
+    const userData = await fetch(USER_DATA_FETCH_API_LINK);
+
+    const userDataJSON = await userData.json()
+
+    console.log(userDataJSON)
+    this.setState({
+      fullName : userDataJSON?.name,
+      userName : userDataJSON?.login,
+      location : userDataJSON?.location,
+      profile_url : userDataJSON?.html_url,
+    })
   }
 
   render() {
     const {first_name, last_name} = this.props // Object Destructing
     
-    const {count, count2} = this.state // Destructuring state object
-    
-    console.log(first_name, "Child render() is called")
+    const { fullName, userName, location, profile_url } = this.state;
+
+    // console.log(first_name, "Child render() is called")
     
 
     return (
       <div className="user user-container">
-        {console.log(first_name, "Child return() is called")}
-
-        <div>
-          <h1 className="user user-name">Count = {count} &nbsp;</h1>
-          <h1 className="user user-name">Count2 = {count2} &nbsp;</h1>
-          <button
-            className="user user-btn"
-            onClick={() =>
-              this.setState({
-                count: this.state.count + 10,
-                count2: this.state.count2 + 2,
-              })
-            }
-          >
-            Increase Count
-          </button>
-        </div>
-
-        <h2 className="user user-name">
-          {first_name} {last_name}
-        </h2>
-        <h3 className="user user-location">Location: Bhilai</h3>
-        <h3 className="user user-social">instagram : @thebhupi</h3>
+        <h2 className="user user-name">{fullName}</h2>
+        <h3 className="user user-location">Location: {location}</h3>
+        <h3 className="user user-social">
+          Gihub Username :{" "}
+          <a href={profile_url} target="_blank">
+            {" "}
+            @{userName}{" "}
+          </a>
+        </h3>
         <p className="user-bio-para">Comming from UserClass.js</p>
       </div>
     );

@@ -7,5 +7,13 @@ const COMPANY_LOGO =
 const RESTAURANT_FETCH_API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
 const RESTAURANT_MENU_FETCH_API_LINK = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5355161&lng=77.3910265&restaurantId="
+
+const USER_DATA_FETCH_API_LINK = "https://api.github.com/users/bhupendrachouhan19";
   
-export { RES_THUMBNAIL_LINK_HEADER, COMPANY_LOGO, RESTAURANT_FETCH_API_LINK, RESTAURANT_MENU_FETCH_API_LINK };
+export {
+  RES_THUMBNAIL_LINK_HEADER,
+  COMPANY_LOGO,
+  RESTAURANT_FETCH_API_LINK,
+  RESTAURANT_MENU_FETCH_API_LINK,
+  USER_DATA_FETCH_API_LINK,
+};

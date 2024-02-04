@@ -368,7 +368,7 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 
 7) Never update state variable directly just like a regular variable. Always use a .setState("#") method to update the state variable in a Functional Components or this.setSTate({state: "#"}) in Class Components. 
 
-**Learn all about implementation of state in React 👉 [Click Here](https://react.dev/learn/thinking-in-react)
+****Learn all about implementation of state in React** 👉 [Click Here](https://react.dev/learn/thinking-in-react)
 
 ### How React uses Reconciliation Algorithm(aka Diffing Algorithm)?
 
@@ -562,6 +562,7 @@ Lifecycle phases of clas based componenets are:
     
     b. componentDidCatch(): Invoked after an error has been thrown in a descendant component.
 
+****React Lifecycle method Diagram** 👉 [Click Here](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 ### When to use componentDidMount(){} ?
 
@@ -569,7 +570,12 @@ Lifecycle phases of clas based componenets are:
 2)  We use componentDidMount(){} to do API calls(Fetch Data). 
 
 ### Mounting v/s Rendering?
-1) The mounting process of a class componenet starts before its rendering proces get started
+1) The mounting process of a class componenet starts before its rendering proces get started.
 2) The mounting process of a class componenet ends after its rendering process ends.
-3) The mounting process of a child class componenet get completed after its rendering in the parent component get completed
+3) The mounting process of a child class componenet get completed after its rendering in the parent component get completed.
+
+### How to make API calls inside componentDidMount?
+```
+
+```
 
