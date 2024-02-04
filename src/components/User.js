@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 const User = (props) => {
   const {firstname, lastname} = props // Object Destructing
@@ -6,6 +6,11 @@ const User = (props) => {
   // Declaring Local state variables in a functional component:
   const [count, _setcount] = useState(0);
   const [count2, _setcount2] = useState(2);
+
+  // API Call in functional component:
+  useEffect(
+    fetchDataFromAPI()
+  ,[])
 
   return (
     <div className="user-container">
