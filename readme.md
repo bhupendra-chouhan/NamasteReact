@@ -564,18 +564,66 @@ Lifecycle phases of clas based componenets are:
 
 ****React Lifecycle method Diagram** 👉 [Click Here](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
-### When to use componentDidMount(){} ?
+### When to use componentDidMount(){} lifecycle method?
 
 1)  There are some things/process that we want to do inside a component after it has been fully mounted. 
-2)  We use componentDidMount(){} to do API calls(Fetch Data). 
+2)  This lifecycle method is called after a component has been rendered to the DOM for the first time.
+3)  We use componentDidMount(){} to do API calls(Fetch Data). 
 
 ### Mounting v/s Rendering?
 1) The mounting process of a class componenet starts before its rendering proces get started.
 2) The mounting process of a class componenet ends after its rendering process ends.
 3) The mounting process of a child class componenet get completed after its rendering in the parent component get completed.
 
+### How state variable are intialized and updated in a class component?
+- Syntax to Initialize state variable in class component:
+  1) State variable are declared inside the constructor(){} function of a class component:
+
+  ```
+  constructor(props){
+    super(props)
+     
+    this.state = {
+      stateVar: 'Initial Value'
+    } 
+  }
+  ```
+
+- Syntax to update or set state variable in class component:
+  1) State variable are declared inside the constructor(){} function of a class component:
+
+  ```
+    this.setState({
+      stateVar: 'Updated_value'
+    })
+  ```
+
+
 ### How to make API calls inside componentDidMount?
-```
+A) Method - 1:
+  ```
+    componentDidMount() {
+      fetchData();
+    }
 
-```
+    const fetchData = async() => {
+      const fetchDataAPI = await fetch('API_LINK');
+      const fetchDataJSON = await fetchDataAPI.json();
+      
+      this.setState({})
+    }
 
+  ```
+B) Method - 2:
+  ```
+    async componentDidMount() {
+      const fetchDataAPI = await fetch('API_LINK');
+      const fetchDataJSON = await fetchDataAPI.json();
+
+      this.setState({})
+    }
+  ```
+
+### How componentDidUpdate(){} lifecycle method works ?
+1) This lifecycle method get executed when the component updates and rerenders.
+2) This method is called both after the initial rendering and after subsequent updates caused by changes to either the component's state or props.
