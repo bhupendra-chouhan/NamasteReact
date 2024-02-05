@@ -612,7 +612,6 @@ A) Method - 1:
       
       this.setState({})
     }
-
   ```
 B) Method - 2:
   ```
@@ -627,3 +626,6 @@ B) Method - 2:
 ### How componentDidUpdate(){} lifecycle method works ?
 1) This lifecycle method get executed when the component updates and rerenders.
 2) This method is called both after the initial rendering and after subsequent updates caused by changes to either the component's state or props.
+
+### How componentWillUnmount(){} lifecycle method works ?
+ The componentWillUnmount lifecycle method is called just before a component is unmounted and removed from the DOM. 
