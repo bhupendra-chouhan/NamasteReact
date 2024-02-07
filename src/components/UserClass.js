@@ -45,6 +45,8 @@ class UserClass extends React.Component {
 
   componentWillUnmount() {
     // gets called right after the componenet is unmounted and removed from the DOM
+
+    
     console.log(this.props.first_name, "Child ComponentWillUnmount");
   }
 

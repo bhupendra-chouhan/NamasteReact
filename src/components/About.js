@@ -1,6 +1,6 @@
-import {Component} from 'react' // Destructured the React
-import User from './User'
-import UserClass from './UserClass'
+import { Component } from "react"; // Destructured the React
+import User from "./User";
+import UserClass from "./UserClass";
 
 // A) About Class Component version:
 class About extends Component {
@@ -13,6 +13,18 @@ class About extends Component {
   componentDidMount() {
     // gets executed right after the componenet had rendered
     console.log("Parent componentDidMount");
+
+    // Below function will be continuously getting invoked in every 1 second, till the user switch to a component other than this(About.js)
+    this.abouInterval = setInterval(() => {
+      console.log("setInterval from About.js component is called.");
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    // The below code will stop the aboutInterval from being invoked after 0 seconds of the user switching to a different component.
+    setTimeout(() => {
+      clearInterval(this.abouInterval);
+    }, 0);
   }
 
   render() {
@@ -32,12 +44,14 @@ class About extends Component {
         <UserClass first_name={"Child_1"} last_name={"Chouhan"} />
 
         {console.log("Parent return() is called")}
+
+        {console.log("!!!!!aboutInterval output: ", this)}
       </div>
     );
   }
 }
 
-export default About
+export default About;
 
 /*
 

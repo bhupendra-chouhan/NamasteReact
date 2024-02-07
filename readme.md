@@ -629,3 +629,9 @@ B) Method - 2:
 
 ### How componentWillUnmount(){} lifecycle method works ?
  The componentWillUnmount lifecycle method is called just before a component is unmounted and removed from the DOM. 
+
+### Some Javascript important methods:
+1) setTimeout(func, delay, param1, param2...) 
+2) clearTimeout(timerId)
+3) setInterval(func, delay, param1, param2...)
+4) clearInterval(intervalId)
