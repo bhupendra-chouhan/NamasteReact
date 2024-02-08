@@ -24,7 +24,7 @@ const User = (props) => {
   };
 
   // API Call in functional component:
-  useEffect(async () => {
+  useEffect(() => {
     fetchDataFromUserAPI();
 
     // // Below function will be continuously getting invoked in every 1 second, till the user switch to a component other than this(User.js)
@@ -44,16 +44,14 @@ const User = (props) => {
     };
   }, []);
 
+  // // Using useEffect() Hook to execute some code when particular props, states, DOM tree get updated or specific components is rerendered:
+  // useEffect(() => {
+  //   // execute this block when states(either 'count' or 'count2') gets updated
+  // }, [count, count2]);
 
-  // Using useEffect() Hook to execute some code when particular props, states, DOM tree get updated or specific components is rerendered:
-  useEffect(() => {
-    // execute this block when states(either 'count' or 'count2') gets updated
-  }, [count, count2]);
-
-  useEffect(() => {
-    // execute this block when state 'count3' gets updated
-  }, [count3]);
-
+  // useEffect(() => {
+  //   // execute this block when state 'count3' gets updated
+  // }, [count3]);
 
   return (
     <div className="user user-container">
