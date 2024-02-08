@@ -4,20 +4,20 @@
 
 ---
 
-## _Episode: 2 (Igniting Our App)_
+## Episode: 2 (Igniting Our App)
 
 ### Steps to create a react app from scratch:
 
-1. Initialising npm using command : npm init
-2. Installing a Web Application Bundler (ex. Parcel) : npm install -D parcel
-3. Building our app using Parcel: npx parcel index.html
+1. Initialising npm using command : `npm init`
+2. Installing a Web Application Bundler (ex. Parcel) : `npm install -D parcel`
+3. Building our app using Parcel: `npx parcel index.html`
    _Here source file of our project is index.html_
-4. Now we will install React as a package to our code base: npm install react
-5. Similarly now we'll install react-dom as well: npm install react-dom
-6. Import react and react-dom in the App.js file, also the add type="module" attribute to the script tag which is used to import App.js in the index.html file and finally bundle the project using the command : "npx parcel index.html"
-7. Command to create Devlopment Build: npx parcel index.html
-   \*The development buil is get stored in the 'dist' directory.
-8. Command to create Production Build: npx parcel build index.html
+4. Now we will install React as a package to our code base: `npm install react`
+5. Similarly now we'll install react-dom as well: `npm install react-dom`
+6. Import react and react-dom in the App.js file, also the add type="module" attribute to the script tag which is used to import App.js in the index.html file and finally bundle the project using the command : `npx parcel index.html`
+7. Command to create Devlopment Build: `npx parcel index.html`
+   _The development buil is get stored in the 'dist' directory._
+8. Command to create Production Build: `npx parcel build index.html`
 9. Configuring BrowsersList inside package.json file.
 10. Finally, we have build our own React App from scratch.
 
@@ -26,7 +26,7 @@
 1. It does not stands for Node Package Manger, actually npm does not have any full form.
 2. It BTS manages packages (i.e. node packages).
 3. It's a standard repositary for all the packages.
-4. When creae a react-app using command "npx create-react-app appName", it already contains npm in it.
+4. When creae a react-app using command `npx create-react-app appName`, it already contains npm in it.
 5. It's one of the biggest package manager.
 
 ### What is npx?
@@ -42,25 +42,25 @@ It's using to wrote commands that executes node packages
 
 ### Why we don't push node_modules to the github or production react application?
 
-It's because if we have package-lock.json and package.json file with us then we can recreate all the node_modules mentioned in inside those file using the command : npm install
+It's because if we have package-lock.json and package.json file with us then we can recreate all the node_modules mentioned in inside those file using the command : `npm install`
 
 ### ~ v/s ^ versions:
 
 Let's say if there any type of update comes to a installed package then:
 
-1. ~ (Tilde) : installs latest major update version of that package.
-2. ^ (Caret): installs latest minor update version of that package.
+1. `~` (Tilde) : installs latest major update version of that package.
+2. `^` (Caret): installs latest minor update version of that package.
 
 NOTE: It's always safer to use the ^ versions over ~ versions.
 
 ### What is a Bundler:
 
-1. It's job is to bundle/package/optimise your react app so that it can be shift to production.
+1. It's job is to `bundle/package/optimise` your react app so that it can be shift to production.
 2. It's one of the most important package in our project.
 3. Webpack, Parcel, Vite are examples of Bundlers.
-4. When we do "create-react-app", it basically uses webpack bundler BTS.
+4. When we do `create-react-app`, it basically uses webpack bundler BTS.
 5. Code Bundling is done in the development phase not in the production phaees, that's why we will install 'parcel' as a dev dependencies using -D flag.
-6. Command to install a Bundler: npm install -D parcel
+6. Command to install a Bundler: `npm install -D parcel`
 
 ### What does Parcel Bundler do to your React project:
 
@@ -115,7 +115,7 @@ It's bad because:
 
 ---
 
-## _Episode: 3 (Laying the Foundation)_
+## Episode: 3 (Laying the Foundation)
 
 ### Steps to create a react app from scratch:
 
@@ -124,15 +124,18 @@ It's bad because:
 ### Adding customised Script for different operations?
 
 inside package.json, add this:
+
+```
 "scripts": {
 "start": "parcel index.html",
 "build": "parcel build index.html",
 "test": "jest"
 },
+```
 
 Now your can run scripts like:
--> npm run start or npm start
--> npm run build
+a. `npm run start` or `npm start`
+b. `npm run build`
 
 ### What and why JSX (JavaScript XML)?
 
@@ -158,8 +161,9 @@ React Functional Components are simple JS functions with 'PascalCase' naming con
 ### Type of Components?
 
 Components are of two types:
--> 1. Class Based Components (OLD)
--> 2. Functional Components (NEW)
+
+1. Class Based Components (OLD)
+2. Functional Components (NEW)
 
 ### What are Functional Components?
 
@@ -178,14 +182,14 @@ Components are of two types:
 
 ### What does .render({}) do?
 
-1. .render({}) takes Object that can be a:
+1. `.render({})` takes Object that can be a:
    a. 'React Element' as a 'Variable' or
-   b. 'React Component' as a 'Tag')
+   b. 'React Component' as a 'Tag'
 2. It replaces the content inside the "root" element with the React Component which it takes as an argument.
 
 ---
 
-## _Episode: 4 (Talk is Cheap, Show me the Code)_
+## Episode: 4 (Talk is Cheap, Show me the Code)
 
 ### Planning of our React App.
 
@@ -254,14 +258,14 @@ console.log(vehicleCar2)
 1. In ReactJS, when you're iterating over an array and rendering components based on its elements, it's important to include a "key" attribute for each rendered component.
 2. The "key" attribute serves as a unique identifier for each component in the list. React uses this identifier to efficiently update the virtual DOM and determine which components need to be added, removed, or updated when the underlying data changes.
 3. We generally give 'unique values or IDs' to the 'key attribute'.
-4. When using .map(), .filter(), .reduce() or .forEach() we can use 'index' as a 'key'
+4. When using `.map()`, `.filter()`, `.reduce()` or `.forEach()` we can use 'index' as a 'key'
 5. Since using "key" attributes in big projects can led to inconsistency, thats why we got useId() hook in React.
 
 ###
 
 ---
 
-## _Episode: 5 (Let's get Hooked)_
+## Episode: 5 (Let's get Hooked)
 
 ### Types of import/export?
 
@@ -322,8 +326,8 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 3. Syntax:
 
 ```
-            const [state, setState] = useState('initialState');
-    **Here useState() returns a regular Array.
+    const [state, setState] = useState('initialState');
+    // Here useState() returns a regular Array.
 ```
 
 4. Always call/create hooks inside the body of the component aka the function body, because its used for creating local state variables inside your functional component.
@@ -332,7 +336,7 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 
 6. Never create useState hooks inside if-else statements, loops, inner function of a function component.
 
-7. Never update state variable directly just like a regular variable. Always use a .setState("#") method to update the state variable in a Functional Components or this.setSTate({state: "#"}) in Class Components.
+7. Never update state variable directly just like a regular variable. Always use a `.setState("#")` method to update the state variable in a Functional Components or `this.setState({state: "#"})` in Class Components.
 
 \***\*Learn all about implementation of state in React** 👉 [Click Here](https://react.dev/learn/thinking-in-react)
 
@@ -359,6 +363,12 @@ NOTE: If we use Default and Named export at the same time in a file(i.e. fileA),
 
 It says ,a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
 
+It makes the codebase:
+
+1. Reusable
+2. Maintainable
+3. Testable
+
 ### Approach to build a static React app?
 
 1. Top-Down Approach:
@@ -375,7 +385,7 @@ It's when the data either flows down from the top-level component to the ones at
 
 ---
 
-## _Episode: 6 (Exploring the world)_
+## Episode: 6 (Exploring the world)
 
 ### Monolithic v/s Micro-Service Architecture?
 
@@ -385,10 +395,10 @@ Seperation of concerns a principle used in programming to separate an applicatio
 
 ### Two ways to fetch data from an API ?
 
-Way-1: Less used | Not so good UX
+Way-1: Less used (Not so good UX)
 [App loads] ---> [API Call(lets say it took 500ms to lead)] ---> [Render data on the UI]
 
-Way-2: **Most used method in ReactJS | Better UX**
+Way-2: **Most used method in ReactJS (Better UX)**
 [App loads] ---> [Render base UI Skeleton] ---> [API Call] --> [Render the data on the UI]
 
 ### How useEffect Hook work?
@@ -442,7 +452,7 @@ Rendering based on certain condition.
 
 ---
 
-## _Episode: 7 (Finding the Path)_
+## Episode: 7 (Finding the Path)
 
 ### What is React-Router-DOM?
 
@@ -474,7 +484,7 @@ The useParams hook in React is used to access and extract parameters from the UR
 
 ---
 
-## _Episode: 8 (Let's get Classy)_
+## Episode: 8 (Let's get Classy)
 
 ### Lifecycle phases of a Class-Based component?
 
@@ -482,35 +492,35 @@ Lifecycle phases of clas based componenets are:
 
 1. **Mounting**:
 
-   a. constructor(): Initializing state and binding methods.
+   a. `constructor()`: Initializing state and binding methods.
 
-   b. static getDerivedStateFromProps(): Rarely used, but it allows the component to update its state based on changes in props.
+   b. `static getDerivedStateFromProps()`: Rarely used, but it allows the component to update its state based on changes in props.
 
-   c. render(): Determines the component's UI.
+   c. `render()`: Determines the component's UI.
 
-   d. componentDidMount(): Invoked after the component is inserted into the DOM. It's often used for tasks such as fetching data from an API. In functional component we achieve same effect using 'useEffect' Hook.
+   d. `componentDidMount()`: Invoked after the component is inserted into the DOM. It's often used for tasks such as fetching data from an API. In functional component we achieve same effect using 'useEffect' Hook.
 
 2. **Updating**:
 
-   a. static getDerivedStateFromProps(): Similar to the mounting phase, used to update state based on changes in props.
+   a. `static getDerivedStateFromProps()`: Similar to the mounting phase, used to update state based on changes in props.
 
-   b. shouldComponentUpdate(): Decides whether the component should re-render or not. It's a performance optimization method.
+   b. `shouldComponentUpdate()`: Decides whether the component should re-render or not. It's a performance optimization method.
 
-   c. render(): Re-renders the component with updated state or props.
+   c. `render()`: Re-renders the component with updated state or props.
 
-   d. getSnapshotBeforeUpdate(): Captures information from the DOM before it is potentially changed.
+   d. `getSnapshotBeforeUpdate()`: Captures information from the DOM before it is potentially changed.
 
-   e. componentDidUpdate(): Invoked after the component is updated in the DOM.
+   e. `componentDidUpdate()`: Invoked after the component is updated in the DOM.
 
 3. **Unmounting**:
 
-   a. componentWillUnmount(): Invoked just before a component is unmounted and destroyed. It's used for cleanup tasks.
+   a. `componentWillUnmount()`: Invoked just before a component is unmounted and destroyed. It's used for cleanup tasks.
 
 4. **Error Handling**:
 
-   a. static getDerivedStateFromError(): Used to update state when an error occurs in a descendant component.
+   a. `static getDerivedStateFromError()`: Used to update state when an error occurs in a descendant component.
 
-   b. componentDidCatch(): Invoked after an error has been thrown in a descendant component.
+   b. `componentDidCatch()`: Invoked after an error has been thrown in a descendant component.
 
 \***\*React Lifecycle method Diagram** 👉 [Click Here](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
@@ -518,7 +528,7 @@ Lifecycle phases of clas based componenets are:
 
 1.  There are some things/process that we want to do inside a component after it has been fully mounted.
 2.  This lifecycle method is called after a component has been rendered to the DOM for the first time.
-3.  We use componentDidMount(){} to do API calls(Fetch Data).
+3.  We use `componentDidMount()` to do API calls(Fetch Data).
 
 ### Mounting v/s Rendering?
 
@@ -530,7 +540,7 @@ Lifecycle phases of clas based componenets are:
 
 - Syntax to Initialize state variable in class component:
 
-  1. State variable are declared inside the constructor(){} function of a class component:
+  1. State variable are declared inside the `constructor()` function of a class component:
 
   ```
   constructor(props){
@@ -544,7 +554,7 @@ Lifecycle phases of clas based componenets are:
 
 - Syntax to update or set state variable in class component:
 
-  1. State variable are declared inside the constructor(){} function of a class component:
+  1. State variable are declared inside the `constructor()` function of a class component:
 
   ```
     this.setState({
@@ -584,15 +594,15 @@ B) Method - 2:
 
 1. This lifecycle method get executed when the component updates and rerenders.
 2. This method is called both after the initial rendering and after subsequent updates caused by changes to either the component's state or props.
-3. componentDidUpdate() lifecycle method is used to executed some code when particular props, states, DOM tree get updated or specific components is rerendered:
+3. `componentDidUpdate()` lifecycle method is used to executed some code when particular props, states, DOM tree get updated or specific components is rerendered:
 
-### How componentWillUnmount(){} lifecycle method works ?
+### How componentWillUnmount() lifecycle method works ?
 
-The componentWillUnmount lifecycle method is called just before a component is unmounted and removed from the DOM.
+The `componentWillUnmount()` lifecycle method is called just before a component is unmounted and removed from the DOM.
 
 ### Some Javascript important methods:
 
-1. setTimeout(func, delay, param1, param2...)
-2. clearTimeout(timerId)
-3. setInterval(func, delay, param1, param2...)
-4. clearInterval(intervalId)
+1. `setTimeout(func, delay, param1, param2...)`
+2. `clearTimeout(timerId)`
+3. `setInterval(func, delay, param1, param2...)`
+4. `clearInterval(intervalId)`
