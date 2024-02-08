@@ -14,17 +14,33 @@ class About extends Component {
     // gets executed right after the componenet had rendered
     console.log("Parent componentDidMount");
 
-    // Below function will be continuously getting invoked in every 1 second, till the user switch to a component other than this(About.js)
+    // // Below function will be continuously getting invoked in every 1 second, till the user switch to a component other than this(About.js)
+    {
+      /*
     this.abouInterval = setInterval(() => {
       console.log("setInterval from About.js component is called.");
     }, 1000);
+    */
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // componentDidUpdate() lifecycle method is used to executed some code when particular props, states, DOM tree get updated or specific components is rerendered.
+
+    if (this.state.count != prevState.count || this.state.count2 != prevState.count2) {
+      // execute this block when states(either 'count' or 'count2') gets updated
+    }
   }
 
   componentWillUnmount() {
     // The below code will stop the aboutInterval from being invoked after 0 seconds of the user switching to a different component.
+    {
+      /*
     setTimeout(() => {
-      clearInterval(this.abouInterval);
-    }, 0);
+        clearInterval(this.abouInterval);
+      }, 0);
+    */
+    }
   }
 
   render() {
@@ -40,12 +56,12 @@ class About extends Component {
           CEO
         </h2>
 
-        {/* <User firstname={"Function"} lastname={"Chouhan"}/> */}
-        <UserClass first_name={"Child_1"} last_name={"Chouhan"} />
+        <User firstname={"Function"} lastname={"Chouhan"} />
+        {/* <UserClass first_name={"Child_1"} last_name={"Chouhan"} /> */}
 
         {console.log("Parent return() is called")}
 
-        {console.log("!!!!!aboutInterval output: ", this)}
+        {/* {console.log("!!!!!aboutInterval output: ", this)} */}
       </div>
     );
   }
