@@ -606,3 +606,45 @@ The `componentWillUnmount()` lifecycle method is called just before a component 
 2. `clearTimeout(timerId)`
 3. `setInterval(func, delay, param1, param2...)`
 4. `clearInterval(intervalId)`
+
+---
+
+## Episode: 9 (Optimising Our App)
+
+### How 4 pillars Object Oriented Programming(OOP) principles are implemented/used in ReactJS?
+
+The 4 pillars of OOPs are:
+
+**1. Abstraction:**
+
+1. Process of hiding complex implementation details and exposing only the essential features of an object or system, facilitating easier understanding and use.
+
+2. Abstraction Implementation (React Hooks):
+   React hooks, such as useState and useEffect, provide a level of abstraction that allows developers to encapsulate and manage stateful logic in functional components.
+   So YES, React hooks can be a good example of implementing the Abstraction principle of Object-Oriented Programming (OOP).
+
+**2. Encapsulation:**
+
+1. Bundling data (attributes) and methods (functions) that operate on the data into a single unit (class) to restrict access and hide implementation details.
+
+2. Encapsulation Implementation (React State Variables):
+   By encapsulating component data and logic within the component itself, React state variables adhere to the Encapsulation principle of OOP.
+
+**3. Inheritance:**
+
+1. Mechanism where a class (subclass) can inherit properties and behaviors (methods) from another class (superclass), promoting code reuse and specialization.
+
+2. Inheritance Implementation (React Class Components):
+   In React, class components can leverage inheritance through the use of JavaScript's class-based inheritance model.
+
+**4. Polymorphism:**
+
+  1. Ability of objects to take on multiple forms, allowing methods to behave differently based on the object's type or class hierarchy.
+
+  2. Polymorphism Implementation (Reusablity of React Components):
+  
+
+Polymorphism can be achieved using:
+
+1. Method Overloading (aka Compile-time or Static Polymorphism):
+2. Method Overriding (aka Run-time or Dynamic Polymorphism):
