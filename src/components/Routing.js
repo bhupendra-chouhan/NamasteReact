@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./AppLayout";
-import About from "./About";
+// import About from "./About";
 import Contact from "./Contact";
 import Cart from "./Cart";
 // import Grocery from "./Grocery";
@@ -10,7 +10,8 @@ import Body from "./Body";
 import RestaurantMenu from "./RestaurantMenu";
 import Shimmer from "./Shimmer";
 
-const Grocery = lazy(() => import("./Grocery"));
+const Grocery = lazy(() => import("./Grocery")); // Lazy Loading Grocery Component
+const About = lazy(() => import("./About")); // Lazy Loading About Component
 
 const Routing = () => {
   const appRouter = createBrowserRouter([
@@ -24,7 +25,11 @@ const Routing = () => {
         },
         {
           path: "/about",
-          element: <About />,
+          element: (
+            <Suspense fallback={<Shimmer />}>
+              <About />
+            </Suspense>
+          ),
         },
         {
           path: "/contact",
