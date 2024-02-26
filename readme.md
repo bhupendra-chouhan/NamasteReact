@@ -655,9 +655,13 @@ Polymorphism can be achieved using:
 2. In order to achieve Single Responsibility Principle, we let one component to only hand one reponsibility.
    We sometimes do this by creating a sperate custom hook for doing stuffs like fetching data from an API, etc and then import that hook inside the component which renders that data.
 
-### What is App Chuncking?
+### What is Chuncking?
 
-Others names for Chunking are **"Code splitting", "Dynamic Bundling", "Lazy Loading", "On-demand Loading" and "Dyanmic Import"**.
+1. It's a technique used in web development for optimizing the loading of javascript code.
+
+2. Others names for Chunking are **"Code splitting", "Dynamic Bundling", "Lazy Loading", "On-demand Loading" and "Dyanmic Import"**.
+
+3. These terms refer to similar concepts of breaking down your application's codebase into smaller chunks or bundles and loading them selectively based on demand
 
 ### Built-in API and Components of React that we use to implement Lazy Loading?
 
