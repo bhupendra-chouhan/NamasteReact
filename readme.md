@@ -658,3 +658,7 @@ Polymorphism can be achieved using:
 ### What is App Chuncking?
 
 Others names for Chunking are **"Code splitting", "Dynamic Bundling", "Lazy Loading", "On-demand Loading" and "Dyanmic Import"**.
+
+### Built-in API and Components of React that we use to implement Lazy Loading?
+
+We use "lazy" API (Built-in) and "Suspense" Component(Built-in) to implement Lazy Loading
