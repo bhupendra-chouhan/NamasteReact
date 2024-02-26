@@ -639,12 +639,18 @@ The 4 pillars of OOPs are:
 
 **4. Polymorphism:**
 
-  1. Ability of objects to take on multiple forms, allowing methods to behave differently based on the object's type or class hierarchy.
+1. Ability of objects to take on multiple forms, allowing methods to behave differently based on the object's type or class hierarchy.
 
-  2. Polymorphism Implementation (Reusablity of React Components):
-  
+2. Polymorphism Implementation (Reusablity of React Components):
 
 Polymorphism can be achieved using:
 
 1. Method Overloading (aka Compile-time or Static Polymorphism):
 2. Method Overriding (aka Run-time or Dynamic Polymorphism):
+
+### What is a Custom Hook?
+
+1. Custom hooks in React are JavaScript functions that allow you to extract and reuse logic across multiple components.
+
+2. In order to achieve Single Responsibility Principle, we let one component to only hand one reponsibility.
+   We sometimes do this by creating a sperate custom hook for doing stuffs like fetching data from an API, etc and then import that hook inside the component which renders that data.
