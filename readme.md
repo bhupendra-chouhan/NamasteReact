@@ -654,3 +654,7 @@ Polymorphism can be achieved using:
 
 2. In order to achieve Single Responsibility Principle, we let one component to only hand one reponsibility.
    We sometimes do this by creating a sperate custom hook for doing stuffs like fetching data from an API, etc and then import that hook inside the component which renders that data.
+
+### What is App Chuncking?
+
+Others names for Chunking are **"Code splitting", "Dynamic Bundling", "Lazy Loading", "On-demand Loading" and "Dyanmic Import"**.

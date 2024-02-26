@@ -12,26 +12,29 @@ const Header = () => {
   return (
     <div className="header">
       <div>
-        <img className="logo" src={COMPANY_LOGO} alt="company logo" />
+        <Link to="/">
+          <img className="logo" src={COMPANY_LOGO} alt="company logo" />
+        </Link>
       </div>
       <div className="nav-items">
         <ul>
-          <li key={0}>
-            <small>Online Status: {onlineStatus}</small>
-          </li>
+          <li key={0}>Online Status: {onlineStatus}</li>
           <li key={1}>
             <Link to="/">Home</Link>
           </li>
           <li key={2}>
-            <Link to="/about">About Us</Link>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li key={3}>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li key={4}>
-            <Link to="/my-cart">CartIcon</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li key={5}>
+            <Link to="/my-cart">CartIcon</Link>
+          </li>
+          <li key={6}>
             <button
               className="log-button"
               onClick={() => {
