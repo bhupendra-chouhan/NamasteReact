@@ -661,4 +661,5 @@ Others names for Chunking are **"Code splitting", "Dynamic Bundling", "Lazy Load
 
 ### Built-in API and Components of React that we use to implement Lazy Loading?
 
-We use "lazy" API (Built-in) and "Suspense" Component(Built-in) to implement Lazy Loading
+We use "lazy" API (Built-in) and "Suspense" Component(Built-in) to implement Lazy Loading.
+For more details visit 👉 : https://react.dev/reference/react/lazy
