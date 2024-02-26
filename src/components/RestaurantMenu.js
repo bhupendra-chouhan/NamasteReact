@@ -1,6 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
+import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -19,7 +20,10 @@ const RestaurantMenu = () => {
 
   console.log(itemCards);
 
-  return (
+  const onlineStatus = useOnlineStatus();
+  return onlineStatus === "🔴 Not Connected" ? (
+    <h1>You are offline. Please check your connection!!..</h1>
+  ) : (
     <div className="res-menu-container">
       <h1>
         {name}, ID : {id}

@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_FETCH_API_LINK } from "../utils/constants";
+import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 
 const Body = () => {
   // Creating a Local State Variable:
@@ -14,7 +15,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  },[searchText]);
+  }, [searchText]);
 
   const fetchData = async () => {
     const data = await fetch(RESTAURANT_FETCH_API_LINK); // fetch() --> returns a Promise
@@ -31,6 +32,11 @@ const Body = () => {
   const clearFilterHandler = () => {
     _setFilterdData(dataToRender);
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === "🔴 Not Connected") {
+    return <h1>You are offline. Please check your connection!!..</h1>;
+  }
 
   return dataToRender.length === 0 ? (
     <Shimmer />
