@@ -2,6 +2,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 /*
 Basic Components Layout for out app:
 
@@ -21,12 +22,19 @@ Basic Components Layout for out app:
     --<Contact/>
 */
 
-const AppLayout = () => (
-  <div className="app">
-    <Header />
-    <Outlet />
-    <Footer />
-  </div>
-);
+const AppLayout = () => {
+  const onlineStatus = useOnlineStatus();
+  return (
+    <div className="app">
+      <Header />
+      {onlineStatus === "🔴 Not Connected" ? (
+        <h1>You are offline. Please check your connection!!..</h1>
+      ) : (
+        <Outlet />
+      )}
+      <Footer />
+    </div>
+  );
+};
 
 export default AppLayout;
