@@ -1,12 +1,15 @@
+import { lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import About from "./About";
 import Contact from "./Contact";
 import Cart from "./Cart";
-import Grocery from "./Grocery";
+// import Grocery from "./Grocery";
 import Error from "./Error";
 import Body from "./Body";
 import RestaurantMenu from "./RestaurantMenu";
+
+const Grocery = lazy(() => import("./Grocery"));
 
 const Routing = () => {
   const appRouter = createBrowserRouter([

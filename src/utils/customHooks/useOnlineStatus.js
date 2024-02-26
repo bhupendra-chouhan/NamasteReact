@@ -13,7 +13,7 @@ const useOnlineStatus = () => {
     });
   }, []);
 
-  console.log(onlineStatus);
+  // console.log(onlineStatus);
 
   // export boolena
   return onlineStatus;
