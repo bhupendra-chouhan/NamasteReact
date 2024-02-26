@@ -5,6 +5,7 @@ import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
+  const onlineStatus = useOnlineStatus();
 
   // --------
   const resInfo = useRestaurantMenu(resId);
@@ -20,7 +21,6 @@ const RestaurantMenu = () => {
 
   console.log(itemCards);
 
-  const onlineStatus = useOnlineStatus();
   return onlineStatus === "🔴 Not Connected" ? (
     <h1>You are offline. Please check your connection!!..</h1>
   ) : (
