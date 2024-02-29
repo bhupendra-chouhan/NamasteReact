@@ -10,15 +10,21 @@ const Header = () => {
   console.log("Header Rendered");
 
   return (
-    <div className="header">
+    <div className="flex bg-orange-500 border-black border-2">
       <div>
         <Link to="/">
-          <img className="logo" src={COMPANY_LOGO} alt="company logo" />
+          <img
+            className="w-10 bg-sky-400"
+            src={COMPANY_LOGO}
+            alt="company logo"
+          />
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li key={0}>Online Status: {onlineStatus}</li>
+      <div className="nav-items bg-slate-600">
+        <ul className="flex bg-orange-600">
+          <li key={0} className="text-2xl border-red-600">
+            Online Status: {onlineStatus}
+          </li>
           <li key={1}>
             <Link to="/">Home</Link>
           </li>

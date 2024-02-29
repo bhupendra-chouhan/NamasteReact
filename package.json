@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Lets Ignite our app",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "rmdir /s /q .parcel-cache && parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
   },

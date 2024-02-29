@@ -2,7 +2,7 @@ const RES_THUMBNAIL_LINK_HEADER =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
 
 const COMPANY_LOGO =
-  "https://png2.cleanpng.com/sh/5d0cfd7c3dacbb7f31b3edf3e67e1861/L0KzQoW3UsI1N5pwgZH9cnHxg8HokvVvfF53fdY2YnB1dLb5TgBifKNuhAZyYz3zcbBqgftme158geZxLYfrecH3hfQua6Nqed82YX7nPbfzjCdmeqQ7TdYEYka1QbXphvU2O184SKoDNUe7R4KAUMg4Pmc8TaUEMEG0PsH1h5==/transparent-red-border-patriotic-pancakes-with-whipped-cream-and-flowers65d9b621dbfe53.3088578717087667539011.png";
+  "https://png2.cleanpng.com/sh/a877a81f1ff38108313e07f07795dccc/L0KzQoK3U8I3N6dBiZH9cnHxg8HokvVvfF55ed1uLXH6ccq0ifNwdl5pgdD3ZYKwebT2jr1lcaRtRdtsb36wRoG8hcZnO2M1UNRrMEexSIG9UMA4PWM2TqMBOEC0RYm9UMM2QF91htk=/transparent-take-away-icon-dinner-icon-dish-icon-605e6f3208bb07.8060075216168015860358.png";
 
 const RESTAURANT_FETCH_API_LINK =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
