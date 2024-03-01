@@ -13,9 +13,9 @@ const RestaurantMenu = () => {
     return <Shimmer />;
   }
 
-  const { name, id, cuisines } = resInfo?.cards[2]?.card?.card?.info;
+  const { name, id, cuisines } = resInfo?.cards[0]?.card?.card?.info;
   const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
   console.log(itemCards);
 

@@ -21,8 +21,8 @@ const Header = () => {
         </Link>
       </div>
       <div className="nav-items bg-slate-600">
-        <ul className="flex bg-orange-600">
-          <li key={0} className="text-2xl border-red-600">
+        <ul className="flex bg-fuchsia-500">
+          <li key={0} className="text-2xl border-gray-600 bg-lime-200">
             Online Status: {onlineStatus}
           </li>
           <li key={1}>
