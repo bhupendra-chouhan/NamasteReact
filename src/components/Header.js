@@ -1,5 +1,5 @@
 import { COMPANY_LOGO } from "../utils/constants";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 

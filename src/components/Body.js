@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_FETCH_API_LINK } from "../utils/constants";
 

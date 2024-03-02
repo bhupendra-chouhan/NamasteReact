@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { USER_DATA_FETCH_API_LINK } from "../utils/constants";
 
 const User = (props) => {
