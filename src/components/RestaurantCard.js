@@ -16,10 +16,13 @@ const RestaurantCard = (props) => {
   const { name, id, cuisines, avgRating, sla, cloudinaryImageId } = resOD; // object destructuring
 
   return (
-    <Link to={`/restaurants/${id}`} className="res-card">
-      <div className="foodlogo-container">
+    <Link
+      to={`/restaurants/${id}`}
+      className="w-60 p-1 m-1 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
+    >
+      <div className="foodlogo-container flex rounded-xl overflow-hidden">
         <img
-          className="foodlogo zoom-in-foodlogo"
+          className="foodlogo zoom-in-foodlogo w-full rounded-xl transition-transform duration-300 ease-in-out hover:transition-transform hover:scale-125"
           src={RES_THUMBNAIL_LINK_HEADER + cloudinaryImageId}
           alt="food-logo"
         />

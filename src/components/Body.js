@@ -36,11 +36,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
+      <div className="w-max my-0 mx-auto">
         {/* Search Box */}
-        <div className="search">
+        <div className="p-3 flex w-max justify-between rounded-xl">
           <input
-            className="search-element"
+            className="mx-2 px-2 border border-gray-600 rounded-xl"
             placeholder="search keywords..."
             value={searchText}
             onChange={(e) => {
@@ -48,7 +48,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="search-element"
+            className="border p-1 bg-green-400 border-gray-600  rounded-xl"
             type="submit"
             onClick={() => {
               _setFilterdData(
@@ -65,7 +65,7 @@ const Body = () => {
         </div>
 
         <button
-          className="filter-btn top-res"
+          className="top-res border bg-orange-400 border-gray-600 rounded-xl cursor-pointer p-2 m-2"
           onClick={() =>
             _setFilterdData(
               filterdData.filter((resEle) => resEle.info.avgRating > 4.2)
@@ -76,7 +76,7 @@ const Body = () => {
         </button>
 
         <button
-          className="filter-btn clear-filter"
+          className="border bg-red-500 border-gray-600  rounded-xl text-white cursor-pointer p-2 m-2"
           onClick={() => {
             clearFilterHandler();
           }}
@@ -85,7 +85,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="flex flex-wrap justify-center">
         {filterdData?.map((resEle) => {
           return (
             <RestaurantCard resObejectData={resEle} key={resEle.info.id} />

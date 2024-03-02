@@ -47,7 +47,7 @@ class About extends Component {
     console.log("Parent render() is called");
 
     return (
-      <div className="about-container">
+      <div className="about-container text-center bg-orange-400 pb-2 rounded-xl">
         <h1>About US</h1>
         <h2
           className="about-title"

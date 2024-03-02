@@ -6,7 +6,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, "./dist/"), // output location of build files
-    filename: "bundle.js", // webpack combines code of all the js files into single bundle.js file
+    filename: "App.js", // webpack combines code of all the js files into single App.js (or sometimes named as bundle.js) file
     publicPath: '/',
   },
 

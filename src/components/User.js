@@ -54,7 +54,7 @@ const User = (props) => {
   // }, [count3]);
 
   return (
-    <div className="user user-container">
+    <div className="user user-container bg-blanchedalmond rounded-xl py-2 px-4 m-4 text-center">
       <h3 className="user">Function Component</h3>
       <h2 className="user">{fullName}</h2>
       <h3 className="user">Location: {location}</h3>

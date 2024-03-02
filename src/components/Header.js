@@ -10,39 +10,39 @@ const Header = () => {
   console.log("Header Rendered");
 
   return (
-    <div className="flex bg-orange-500 border-black border-2">
+    <div className="flex w-full items-center justify-between bg-slate-300">
       <div>
         <Link to="/">
           <img
-            className="w-10 bg-sky-400"
+            className="w-24"
             src={COMPANY_LOGO}
             alt="company logo"
           />
         </Link>
       </div>
-      <div className="nav-items bg-slate-600">
-        <ul className="flex bg-fuchsia-500">
-          <li key={0} className="text-2xl border-gray-600 bg-lime-200">
+      <div className="w-4/6 pr-10 text-2xl">
+        <ul className="flex list-none justify-between">
+          <li key={0} className="cursor-pointer">
             Online Status: {onlineStatus}
           </li>
-          <li key={1}>
+          <li key={1} className="cursor-pointer">
             <Link to="/">Home</Link>
           </li>
-          <li key={2}>
+          <li key={2} className="cursor-pointer">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li key={3}>
+          <li key={3} className="cursor-pointer">
             <Link to="/about">About Us</Link>
           </li>
-          <li key={4}>
+          <li key={4} className="cursor-pointer">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li key={5}>
+          <li key={5} className="cursor-pointer">
             <Link to="/my-cart">CartIcon</Link>
           </li>
-          <li key={6}>
+          <li key={6} className="cursor-pointer border-solid border border-gray-500 px-12 py min-w-fit">
             <button
-              className="log-button"
+              className="log-button w-32 px-3"
               onClick={() => {
                 setlogIn(!logIn);
               }}
