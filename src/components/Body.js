@@ -36,7 +36,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="w-max my-0 mx-auto">
+      <div className="flex w-max my-3 mx-auto">
         {/* Search Box */}
         <div className="p-3 flex w-max justify-between rounded-xl">
           <input
@@ -72,7 +72,7 @@ const Body = () => {
             )
           }
         >
-          Top Rate Restaurant
+          Top Rated Restaurant
         </button>
 
         <button

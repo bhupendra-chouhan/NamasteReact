@@ -10,7 +10,7 @@ const Header = () => {
   console.log("Header Rendered");
 
   return (
-    <div className="flex w-full items-center justify-between bg-slate-300">
+    <div className="flex w-full items-center justify-between bg-slate-300 shadow-slate-400 shadow-lg">
       <div>
         <Link to="/">
           <img
