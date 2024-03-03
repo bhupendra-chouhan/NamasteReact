@@ -667,3 +667,18 @@ Polymorphism can be achieved using:
 
 We use "lazy" API (Built-in) and "Suspense" Component(Built-in) to implement Lazy Loading.
 For more details visit 👉 : https://react.dev/reference/react/lazy
+
+---
+
+## Episode: 10 (Jo Dikhta Hai, Vo Bikta Hai)
+
+1. Configured Webpack bundler to out react app replacing the previouly used Parcel bundler.
+2. Learned configuring Tailwind with Webpack to our React App.
+3. Styled the components using TailwindCSS.
+
+---
+
+## Episode: 11 (Data is the new Oil)
+
+### What is a Higher Order Component?
+At the end of the day HOC is just a Pure Javascript Function which 'takes a component as argument' and 'returns a component'. 

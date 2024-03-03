@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withVegLabel} from "./RestaurantCard";
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_FETCH_API_LINK } from "../utils/constants";
@@ -22,7 +22,7 @@ const Body = () => {
     const dataJSON = await data.json();
     // console.log(dataJSON);
     const valueToRender =
-      dataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      dataJSON?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     _setDataToRender(valueToRender);
     _setFilterdData(valueToRender);
@@ -31,6 +31,8 @@ const Body = () => {
   const clearFilterHandler = () => {
     _setFilterdData(dataToRender);
   };
+
+  const VegRestaurantCard = withVegLabel(RestaurantCard); // For Veg Restaurants
 
   return dataToRender.length === 0 ? (
     <Shimmer />
@@ -87,7 +89,9 @@ const Body = () => {
 
       <div className="flex flex-wrap justify-center">
         {filterdData?.map((resEle) => {
-          return (
+          return resEle.info.veg === true ? (
+            <VegRestaurantCard resObejectData={resEle} key={resEle.info.id} />
+          ) : (
             <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
           );
         })}

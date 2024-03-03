@@ -35,4 +35,17 @@ const RestaurantCard = (props) => {
   );
 };
 
+
+// For Promoted Restaurants (Declaring a Higher Order Component):
+export const withVegLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div className="w-60 p-1 m-1 bg-gray-00 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer">
+        <label htmlFor="veg_res" className="bg-green-400 rounded-lg p-1 m-1">Vegetarian</label>
+        <RestaurantCard id="veg_res" {...props} />
+      </div>
+    );
+  };
+}; 
+
 export default RestaurantCard;
