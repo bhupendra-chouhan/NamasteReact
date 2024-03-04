@@ -1,6 +1,5 @@
 import React from "react";
 import { RES_THUMBNAIL_LINK_HEADER } from "../utils/constants";
-import { Link } from "react-router-dom";
 
 /* Styling Section: START*/
 
@@ -16,10 +15,7 @@ const RestaurantCard = (props) => {
   const { name, id, cuisines, avgRating, sla, cloudinaryImageId } = resOD; // object destructuring
 
   return (
-    <Link
-      to={`/restaurants/${id}`}
-      className="w-60 p-1 m-1 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
-    >
+    <div>
       <div className="foodlogo-container flex rounded-xl overflow-hidden">
         <img
           className="foodlogo zoom-in-foodlogo w-full rounded-xl transition-transform duration-300 ease-in-out hover:transition-transform hover:scale-125"
@@ -27,25 +23,30 @@ const RestaurantCard = (props) => {
           alt="food-logo"
         />
       </div>
-      <h2>{name}</h2>
+      <h2>
+        {name}:{id}
+      </h2>
       <h5>Cuisines: {cuisines.join(", ")}</h5>
       <h4>Avg. Rating: {avgRating}</h4>
       <h4>Delivery Time: {sla.deliveryTime} minutes</h4>
-    </Link>
+    </div>
   );
 };
-
 
 // For Promoted Restaurants (Declaring a Higher Order Component):
 export const withVegLabel = (RestaurantCard) => {
   return (props) => {
+    const { resObejectData, key } = props;
+    console.log(resObejectData, key);
     return (
-      <div className="w-60 p-1 m-1 bg-gray-00 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer">
-        <label htmlFor="veg_res" className="bg-green-400 rounded-lg p-1 m-1">Vegetarian</label>
+      <div>
+        <label htmlFor="veg_res" className="p-1 px-2 pb-4 text-yellow-100 bg-green-700 rounded-t-lg">
+          Vegetarian
+        </label>
         <RestaurantCard id="veg_res" {...props} />
       </div>
     );
   };
-}; 
+};
 
 export default RestaurantCard;

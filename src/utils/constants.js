@@ -2,7 +2,7 @@ const RES_THUMBNAIL_LINK_HEADER =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
 
 const COMPANY_LOGO =
-  "https://png2.cleanpng.com/sh/a877a81f1ff38108313e07f07795dccc/L0KzQoK3U8I3N6dBiZH9cnHxg8HokvVvfF55ed1uLXH6ccq0ifNwdl5pgdD3ZYKwebT2jr1lcaRtRdtsb36wRoG8hcZnO2M1UNRrMEexSIG9UMA4PWM2TqMBOEC0RYm9UMM2QF91htk=/transparent-take-away-icon-dinner-icon-dish-icon-605e6f3208bb07.8060075216168015860358.png";
+  "https://png2.cleanpng.com/sh/a58be6d2db66bc17b978954649e625bf/L0KzQYi4UsEzN2g4UJGAYUOzRYm4UMViP2dpUJC6MkO2RoKAU8E2OWQ2SakCMUK2R4G9TwBvbz==/5a3058105a76d8.1233617315131177123706.png";
 
 const RESTAURANT_FETCH_API_LINK =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5355161&lng=77.3910265&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";

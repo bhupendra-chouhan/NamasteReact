@@ -2,6 +2,7 @@ import RestaurantCard, {withVegLabel} from "./RestaurantCard";
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_FETCH_API_LINK } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // Creating a Local State Variable:
@@ -88,13 +89,24 @@ const Body = () => {
       </div>
 
       <div className="flex flex-wrap justify-center">
-        {filterdData?.map((resEle) => {
-          return resEle.info.veg === true ? (
-            <VegRestaurantCard resObejectData={resEle} key={resEle.info.id} />
-          ) : (
-            <RestaurantCard resObejectData={resEle} key={resEle.info.id} />
-          );
-        })}
+
+          {filterdData?.map((resEle) => {
+            return (
+              <Link
+                to={"/restaurants/"+resEle.info.id}
+                className="w-60 p-2 m-4 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
+              >
+                {resEle.info.veg?
+                  <VegRestaurantCard
+                    resObejectData={resEle}
+                /> :
+                  <RestaurantCard
+                    resObejectData={resEle}
+                    key={resEle.info.id}
+                  />
+                }
+              </Link>
+            );})}
       </div>
     </div>
   );

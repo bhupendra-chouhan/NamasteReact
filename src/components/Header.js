@@ -40,7 +40,7 @@ const Header = () => {
           <li key={5} className="cursor-pointer">
             <Link to="/my-cart">CartIcon</Link>
           </li>
-          <li key={6} className="cursor-pointer border-solid border border-gray-500 px-12 py min-w-fit">
+          <li key={6} className="cursor-pointer border-solid border border-gray-500 px-12 py min-w-fit hover:bg-slate-100 hover:ease-in-out rounded-lg">
             <button
               className="log-button w-32 px-3"
               onClick={() => {
