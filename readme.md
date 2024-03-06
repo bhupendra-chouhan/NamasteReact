@@ -684,3 +684,8 @@ For more details visit 👉 : https://react.dev/reference/react/lazy
 1. At the end of the day HOC is just a Pure Javascript Function which 'takes a component as argument' and 'returns a component'. 
 2. Component which is been passed to the an HOC is called as "wraaped" or "inner" component. 
 3. A HOC doesn't modifies the code actual "wrapped" or "inner" component, but adds extra stuff on top of it inorder to enhance that inner component.
+
+### Layers of a React app?
+All React apps have these two layers"
+1. UI Layer
+2. Data Layer
