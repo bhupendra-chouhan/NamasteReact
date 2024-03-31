@@ -37,24 +37,24 @@ const Header = () => {
           <li key={0} className="cursor-pointer">
             Online Status: {onlineStatus}
           </li>
-          <li key={1} className="cursor-pointer">
+          <li key={1} className="cursor-pointer hover:text-blue-500">
             <Link to="/">Home</Link>
           </li>
-          <li key={2} className="cursor-pointer">
+          <li key={2} className="cursor-pointer hover:text-blue-500">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li key={3} className="cursor-pointer">
+          <li key={3} className="cursor-pointer hover:text-blue-500">
             <Link to="/about">About Us</Link>
           </li>
-          <li key={4} className="cursor-pointer">
+          <li key={4} className="cursor-pointer hover:text-blue-500">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li key={5} className="cursor-pointer">
+          <li key={5} className="cursor-pointer hover:text-blue-500">
             <Link to="/my-cart">CartIcon</Link>
           </li>
           <li
             key={6}
-            className="cursor-pointer border-solid border border-gray-500 px-12 py min-w-fit hover:bg-slate-100 hover:ease-in-out rounded-lg"
+            className="cursor-pointer border-solid border border-gray-500 px-12 w-fit hover:bg-orange-200 hover:ease-in-out rounded-lg"
           >
             <button
               className="log-button w-fit"
