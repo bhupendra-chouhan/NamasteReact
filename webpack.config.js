@@ -36,6 +36,11 @@ module.exports = {
         include: path.resolve(__dirname, './'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.(jpe?g|gif|png)$/i,
+        include: path.resolve(__dirname, './src/utils/'),
+        use: ['file-loader'],
+      },
     ],
     },
     devServer: {

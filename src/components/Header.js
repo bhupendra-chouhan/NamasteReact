@@ -1,4 +1,4 @@
-import { COMPANY_LOGO } from "../utils/constants";
+import COMPANY_LOGO from "../utils/assets/images/company-logo.png";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
