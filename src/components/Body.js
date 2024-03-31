@@ -38,8 +38,8 @@ const Body = () => {
   return dataToRender.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="flex w-max my-3 mx-auto">
+    <div className="body flex flex-col  justify-center">
+      <div className="flex flex-col md:flex-row w-max my-3 mx-auto">
         {/* Search Box */}
         <div className="p-3 flex w-max justify-between rounded-xl">
           <input
@@ -51,7 +51,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="border p-1 bg-green-400 border-gray-600  rounded-xl"
+            className="border p-1 bg-green-400 border-gray-600 rounded-xl"
             type="submit"
             onClick={() => {
               _setFilterdData(
@@ -66,9 +66,10 @@ const Body = () => {
             Search
           </button>
         </div>
-
+        
+        <div>
         <button
-          className="top-res border bg-orange-400 border-gray-600 rounded-xl cursor-pointer p-2 m-2"
+          className="top-res border bg-orange-400 border-gray-600 rounded-xl cursor-pointer p-2 w-fit m-2"
           onClick={() =>
             _setFilterdData(
               filterdData.filter((resEle) => resEle.info.avgRating > 4.2)
@@ -79,13 +80,14 @@ const Body = () => {
         </button>
 
         <button
-          className="border bg-red-500 border-gray-600  rounded-xl text-white cursor-pointer p-2 m-2"
+          className="border bg-red-500 border-gray-600  rounded-xl text-white cursor-pointer w-fit p-2 m-2"
           onClick={() => {
             clearFilterHandler();
           }}
         >
           Clear All Filters
         </button>
+        </div>
       </div>
 
       <div className="flex flex-wrap justify-center">
@@ -93,7 +95,7 @@ const Body = () => {
             return (
               <Link
                 to={"/restaurants/" + resEle.info.id}
-                className="w-60 p-2 m-4 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
+                className="w-80 sm:w-60 p-2 m-4 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
                 key={resEle.info.id}
               >
                 {resEle.info.veg ? (
