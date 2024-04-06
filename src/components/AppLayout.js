@@ -28,11 +28,13 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      {onlineStatus === "🔴 Not Connected" ? (
-        <h1>You are offline. Please check your connection!!..</h1>
-      ) : (
-        <Outlet />
-      )}
+      <div className="mt-28">
+        {onlineStatus === "🔴 Not Connected" ? (
+          <h1>You are offline. Please check your connection!!..</h1>
+        ) : (
+          <Outlet />
+        )}
+      </div>
       <Footer />
     </div>
   );

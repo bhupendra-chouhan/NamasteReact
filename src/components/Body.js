@@ -38,7 +38,7 @@ const Body = () => {
   return dataToRender.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body flex flex-col  justify-center">
+    <div className="body flex flex-col justify-center">
       <div className="flex flex-col md:flex-row w-max my-3 mx-auto">
         {/* Search Box */}
         <div className="p-3 flex w-max justify-between rounded-xl">

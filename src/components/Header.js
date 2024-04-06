@@ -13,7 +13,7 @@ const Header = () => {
   console.log("Header Rendered");
 
   return (
-    <div className="md:flex md:sticky md:top-0 md:left-auto w-full justify-between items-center bg-slate-300 shadow-slate-400 shadow-lg">
+    <div className="md:flex md:fixed z-10 md:top-0 md:left-auto w-full justify-between items-center bg-slate-300 shadow-slate-400 shadow-lg">
       <div>
         <Link to="/">
           <img className="w-20 md:w-24" src={COMPANY_LOGO} alt="company logo" />
@@ -32,7 +32,7 @@ const Header = () => {
           className={`${
             open ? "top-auto" : "top-[-496px]"
           } md:flex md:justify-around items-center md:pb-0 pb-3 absolute md:static
-          bg-white md:bg-[transparent] md:z-auto md:gap-10 w-full md:w-auto pl-3 md:border-none border-2 border-blue-400 rounded-b-2xl transition-all duration-500 ease-in-out z-10`}
+          bg-white md:bg-[transparent] md:gap-10 w-full md:w-auto pl-3 md:border-none border-2 border-blue-400 rounded-b-2xl transition-all duration-500 ease-in-out z-10`}
         >
           <li key={0} className="cursor-pointer">
             Online Status: {onlineStatus}
