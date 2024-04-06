@@ -695,4 +695,12 @@ All React apps have these two layers"
 
 ### What is Controlled and Uncontrolled components?
 
+1) Controlled component: 
+- A controlled component's state is managed by its parent or another component higher up in the hierarchy through props and callbacks.
+
+2)Uncontrolled component: 
+- An uncontrolled component's state is typically managed by the browser's native form handling mechanism, rather than by React's state management.
+
 ### What is lifting the state up?
+
+"Lifting state up" is a concept in React where the state that is needed by multiple components is moved to their closest common ancestor, typically a parent component. By doing so, the state becomes shared among the components, allowing them to communicate and synchronize with each other through props.

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
@@ -10,6 +10,8 @@ const RestaurantMenu = () => {
   // --------
   const resInfo = useRestaurantMenu(resId);
   // --------
+
+  const [showItemsIndex, _setShowItemsIndex] = useState(null);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -43,10 +45,12 @@ const RestaurantMenu = () => {
 
       {/* Categories Accordions */}
       <div className="flex flex-col items-center">
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <RestaurantCategoryAccordian
             key={category.card.card.title}
             data={category.card.card}
+            showItems={index === showItemsIndex ? true : false}
+            setShowItemsIndex ={()=>_setShowItemsIndex(index)}
           />
         ))}
       </div>
