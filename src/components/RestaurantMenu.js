@@ -12,6 +12,7 @@ const RestaurantMenu = () => {
   // --------
 
   const [showItemsIndex, _setShowItemsIndex] = useState(null);
+  const [showItemsList, _setShowItemsList] = useState(false); 
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -30,7 +31,7 @@ const RestaurantMenu = () => {
 
   // console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
   // console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <div>
@@ -49,10 +50,13 @@ const RestaurantMenu = () => {
           <RestaurantCategoryAccordian
             key={category.card.card.title}
             data={category.card.card}
-            showItems={index === showItemsIndex ? true : false}
-            setShowItemsIndex ={()=>_setShowItemsIndex(index)}
+            showItems={index === showItemsIndex && showItemsList ? true : false}
+            setShowItemsIndex={() => _setShowItemsIndex(index)}
+            showItemsList={showItemsList}
+            setShowItemsList={_setShowItemsList}
           />
         ))}
+        {/* {console.log("showItemsList", showItemsList)} */}
       </div>
     </div>
   );
