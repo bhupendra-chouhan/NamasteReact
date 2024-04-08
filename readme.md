@@ -701,6 +701,10 @@ All React apps have these two layers"
 2)Uncontrolled component: 
 - An uncontrolled component's state is typically managed by the browser's native form handling mechanism, rather than by React's state management.
 
+NOTE: I have build 'Accoridians' to show different food categories of a restaurant, using the controlled component concept of react
+
 ### What is lifting the state up?
 
 "Lifting state up" is a concept in React where the state that is needed by multiple components is moved to their closest common ancestor, typically a parent component. By doing so, the state becomes shared among the components, allowing them to communicate and synchronize with each other through props.
+
+### State management using contextAPI?
