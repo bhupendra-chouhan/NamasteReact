@@ -1,7 +1,8 @@
 import COMPANY_LOGO from "../utils/assets/images/company-logo.png";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
+import UserContext from "../utils/contexts/UserContext";
 
 const Header = () => {
   const [logIn, setlogIn] = useState(false);
@@ -10,7 +11,10 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const handleOpenMenu = () => setOpen(!open);
 
-  console.log("Header Rendered");
+  const {loggedInUser} = useContext(UserContext)
+  console.log(loggedInUser);
+  
+  // console.log("Header Rendered");
 
   return (
     <div className="md:flex md:fixed z-10 md:top-0 md:left-auto w-full justify-between items-center bg-slate-300 shadow-slate-400 shadow-lg">
@@ -50,7 +54,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li key={5} className="cursor-pointer hover:text-blue-500">
-            <Link to="/my-cart">CartIcon</Link>
+            <Link to="/my-cart">{loggedInUser}</Link>
           </li>
           <li
             key={6}

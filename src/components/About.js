@@ -1,6 +1,7 @@
 import React, { Component } from "react"; // Destructured the React
 import User from "./User";
 import UserClass from "./UserClass";
+import UserContext from "../utils/contexts/UserContext";
 
 // A) About Class Component version:
 class About extends Component {
@@ -62,6 +63,14 @@ class About extends Component {
         {console.log("Parent return() is called")}
 
         {/* {console.log("!!!!!aboutInterval output: ", this)} */}
+
+        <UserContext.Consumer>
+          {({ loggedInUser }) => (
+            <div className="italic bold">
+              =&gt; comming fron UserContext: {loggedInUser}
+            </div>
+          )}
+        </UserContext.Consumer>
       </div>
     );
   }
