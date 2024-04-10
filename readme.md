@@ -710,7 +710,8 @@ NOTE: I have build 'Accoridians' to show different food categories of a restaura
 ### State management using contextAPI?
 
 1) We use contextAPI to prevent prop-drilling type situations.
-2) We use context mostly to store data which is been accessed/used by multiple components.
+2) We use context mostly to store data(state or setState functions) which is been accessed/used by multiple components.
 3) We can create context multiple context, anywhere in the app and we can also override any context, anywhere we want to in our app.
 4) Context is a global space, I can either provide it to a specific component or to the the whole app.
+5) ContexAPI are used to make the state globally available and are mostly used in small-to-mid size projects. For bigger and complex projects in industry we used an external library known as 'Redux', for doing the state-management in out app. 
  

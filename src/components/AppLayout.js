@@ -32,17 +32,24 @@ const AppLayout = () => {
   useEffect(() => {
     // Make an API call and send username and password
     const data = {
-      user_name_is: "HERO HU",
+      user_name_is: "HERO",
     };
     _setUserName(data.user_name_is);
   }, []);
 
   const onlineStatus = useOnlineStatus();
   return (
-    <UserContext.Provider value={{ loggedInUser: userName }}>
-      {/* Overriding the 'loggedInUser' value present inside the 'UserContext.js' context. (Providing context to all the components) */}
+    <UserContext.Provider value={{ loggedInUser: userName, _setUserName }}> 
+      {/* Overriding the 'loggedInUser' value present inside the 'UserContext.js' context and also adding/passing '_setUserName' method to the context  . (Providing context to all the components) */}
+      {/* Here loggedInUser = "Hero Hu" */}
       <div className="app">
-        <Header />
+        
+        {/* <UserContext.Provider value={{ loggedInUser: "Thomas Edison" }}> */}
+          {/* Providing nested 'UserContext' and Overriding the 'loggedInUser' value (Providing context to only the 'Header' component) */}
+          {/* Here loggedInUser = "Thomas Edison" */}
+          <Header />
+        {/* </UserContext.Provider> */}
+        
         <div className="mt-28">
           {onlineStatus === "🔴 Not Connected" ? (
             <h1>You are offline. Please check your connection!!..</h1>

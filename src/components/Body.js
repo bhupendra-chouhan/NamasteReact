@@ -1,14 +1,17 @@
 import RestaurantCard, {withVegLabel} from "./RestaurantCard";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_FETCH_API_LINK } from "../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/contexts/UserContext";
 
 const Body = () => {
   // Creating a Local State Variable:
   const [dataToRender, _setDataToRender] = useState([]);
   const [filterdData, _setFilterdData] = useState([]);
   const [searchText, _setSearchText] = useState("");
+
+  const {loggedInUser, _setUserName } = useContext(UserContext);
 
   // Whenever a state variables updates, react triggers a reconciliation cycle(re-renders the conponents).
   console.log("Body is Rerendered...");
@@ -66,47 +69,57 @@ const Body = () => {
             Search
           </button>
         </div>
-        
-        <div>
-        <button
-          className="top-res border bg-orange-400 border-gray-600 rounded-xl cursor-pointer p-2 w-fit m-2"
-          onClick={() =>
-            _setFilterdData(
-              filterdData.filter((resEle) => resEle.info.avgRating > 4.2)
-            )
-          }
-        >
-          Top Rated Restaurant
-        </button>
 
-        <button
-          className="border bg-red-500 border-gray-600  rounded-xl text-white cursor-pointer w-fit p-2 m-2"
-          onClick={() => {
-            clearFilterHandler();
-          }}
-        >
-          Clear All Filters
-        </button>
+        <div>
+          <button
+            className="top-res border bg-orange-400 border-gray-600 rounded-xl cursor-pointer p-2 w-fit m-2"
+            onClick={() =>
+              _setFilterdData(
+                filterdData.filter((resEle) => resEle.info.avgRating > 4.2)
+              )
+            }
+          >
+            Top Rated Restaurant
+          </button>
+
+          <button
+            className="border bg-red-500 border-gray-600  rounded-xl text-white cursor-pointer w-fit p-2 m-2"
+            onClick={() => {
+              clearFilterHandler();
+            }}
+          >
+            Clear All Filters
+          </button>
+        </div>
+
+        <div className="p-3 flex w-max justify-between rounded-xl">
+          <input
+            className="mx-2 px-2 border border-gray-600 rounded-xl"
+            placeholder="Set new username "
+            value={loggedInUser}
+            onChange={(e) => {
+              _setUserName(e.target.value);
+            }}
+          ></input>
         </div>
       </div>
 
       <div className="flex flex-wrap justify-center">
-          {filterdData?.map((resEle) => {
-            return (
-              <Link
-                to={"/restaurants/" + resEle.info.id}
-                className="w-80 sm:w-60 p-2 m-4 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
-                key={resEle.info.id}
-              >
-                {resEle.info.veg ? (
-                  <VegRestaurantCard resObejectData={resEle} />
-                ) : (
-                  <RestaurantCard
-                    resObejectData={resEle}
-                  />
-                )}
-              </Link>
-            );})}
+        {filterdData?.map((resEle) => {
+          return (
+            <Link
+              to={"/restaurants/" + resEle.info.id}
+              className="w-80 sm:w-60 p-2 m-4 bg-gray-200 border-gray-shimmer border-solid border-2 rounded-2xl min-w-20 min-h-25 hover:bg-orange-400 hover:cursor-pointer"
+              key={resEle.info.id}
+            >
+              {resEle.info.veg ? (
+                <VegRestaurantCard resObejectData={resEle} />
+              ) : (
+                <RestaurantCard resObejectData={resEle} />
+              )}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
