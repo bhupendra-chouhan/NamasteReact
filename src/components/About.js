@@ -18,7 +18,7 @@ class About extends Component {
     // // Below function will be continuously getting invoked in every 1 second, till the user switch to a component other than this(About.js)
     {
       /*
-    this.abouInterval = setInterval(() => {
+    this.aboutInterval = setInterval(() => {
       console.log("setInterval from About.js component is called.");
     }, 1000);
     */
@@ -38,7 +38,7 @@ class About extends Component {
     {
       /*
     setTimeout(() => {
-        clearInterval(this.abouInterval);
+        clearInterval(this.aboutInterval);
       }, 0);
     */
     }
