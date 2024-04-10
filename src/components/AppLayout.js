@@ -39,11 +39,10 @@ const AppLayout = () => {
 
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="app">
-      
-      <Header />
-      {/* Overriding the 'loggedInUser' value present inside the 'UserContext.js' context. (Providing context to only "Outlet" components) */}
-      <UserContext.Provider value={{loggedInUser: userName}}> 
+    <UserContext.Provider value={{ loggedInUser: userName }}>
+      {/* Overriding the 'loggedInUser' value present inside the 'UserContext.js' context. (Providing context to all the components) */}
+      <div className="app">
+        <Header />
         <div className="mt-28">
           {onlineStatus === "🔴 Not Connected" ? (
             <h1>You are offline. Please check your connection!!..</h1>
@@ -52,8 +51,8 @@ const AppLayout = () => {
           )}
         </div>
         <Footer />
-      </UserContext.Provider>
-    </div>
+      </div>
+    </UserContext.Provider>
   );
 };
 
