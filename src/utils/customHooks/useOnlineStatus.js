@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 
 const useOnlineStatus = () => {
-  const [onlineStatus, _setOnlineStatus] = useState("🟢 Connected");
+  const [onlineStatus, _setOnlineStatus] = useState("🟢:)");
 
   useEffect(() => {
     window.addEventListener("online", (event) => {
-      _setOnlineStatus("🟢 Connected");
+      _setOnlineStatus("🟢:)");
     });
     window.addEventListener("offline", (event) => {
-      _setOnlineStatus("🔴 Not Connected");
+      _setOnlineStatus("🔴:(");
     });
   }, []);
 

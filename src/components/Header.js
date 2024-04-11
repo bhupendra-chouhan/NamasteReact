@@ -12,7 +12,7 @@ const Header = () => {
   const handleOpenMenu = () => setOpen(!open);
 
   const {loggedInUser} = useContext(UserContext)
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
   
   // console.log("Header Rendered");
 
@@ -35,10 +35,10 @@ const Header = () => {
         <ul
           className={`${
             open ? "top-auto" : "top-[-496px]"
-          } md:flex md:justify-around items-center md:pb-0 pb-3 absolute md:static
+          } flex flex-col md:flex-row md:justify-around md:pb-0 pb-3 absolute md:static
           bg-white md:bg-[transparent] md:gap-10 w-full md:w-auto pl-3 md:border-none border-2 border-blue-400 rounded-b-2xl transition-all duration-500 ease-in-out z-10`}
         >
-          <li key={0} className="cursor-pointer">
+          <li key={0} className="cursor-pointer my-4 md:my-0 text-sm max-w-fit text-white bg-gray-600 p-1 rounded-lg">
             Online Status: {onlineStatus}
           </li>
           <li key={1} className="cursor-pointer hover:text-blue-500">
@@ -53,12 +53,18 @@ const Header = () => {
           <li key={4} className="cursor-pointer hover:text-blue-500">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li key={5} className="cursor-pointer hover:text-blue-500">
-            <Link to="/my-cart">{loggedInUser}</Link>
+          <li key={5} className="cursor-pointer text-orange-500 hover:text-violet-500 text-3xl ">
+            <Link to="/my-cart" className="flex items-end">
+              <ion-icon name="cart-outline"></ion-icon>
+              <span className="text-2xl">()</span>
+            </Link>
+          </li>
+          <li key={6} className="cursor-pointer hover:text-blue-500">
+            {loggedInUser}
           </li>
           <li
-            key={6}
-            className="cursor-pointer border-solid border border-gray-500 px-12 w-fit hover:bg-orange-200 hover:ease-in-out rounded-lg"
+            key={7}
+            className="cursor-pointer border-solid border border-gray-500 px-12 w-fit h-fit hover:bg-orange-200 hover:ease-in-out rounded-lg"
           >
             <button
               className="log-button w-fit"

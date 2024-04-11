@@ -2,13 +2,13 @@ import React from 'react'
 import {RES_THUMBNAIL_LINK_HEADER} from "../utils/constants"
 
 const RestaurantCategoryItemCard = ({itemdata}) => {
-    const {id, name, description, imageId, price, ratings} = itemdata.card.info
+    const { id, name, description, imageId, price, defaultPrice, ratings } = itemdata.card.info;
   return (
     <div className="md:flex gap-3 relative md:h-fit md:justify-between border-b-4 border-gray-300 py-4 my-4">
       <div className="md:flex md:flex-col md:grow md:justify-between">
         <div className="font-semibold text">id : {id}</div>
         <div className="font-semibold text-3xl">{name}</div>
-        <div className="text-2xl font-bold">₹ {price / 100}</div>
+        <div className="text-2xl font-bold"> ₹ {(price ? price : defaultPrice) / 100} </div>
         <div>
           <span className="text-xl font-semibold">
             ⭐ {ratings.aggregatedRating.rating}
