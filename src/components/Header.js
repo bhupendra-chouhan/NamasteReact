@@ -35,8 +35,8 @@ const Header = () => {
         <ul
           className={`${
             open ? "top-auto" : "top-[-496px]"
-          } flex flex-col md:flex-row md:justify-around md:pb-0 pb-3 absolute md:static
-          bg-white md:bg-[transparent] md:gap-10 w-full md:w-auto pl-3 md:border-none border-2 border-blue-400 rounded-b-2xl transition-all duration-500 ease-in-out z-10`}
+          } flex flex-col md:flex-row md:justify-around text-nowrap md:pb-0 pb-3 absolute md:static
+          bg-white md:bg-[transparent] md:gap-5 w-full md:w-auto pl-3 md:border-none border-2 border-blue-400 rounded-b-2xl transition-all duration-500 ease-in-out z-10`}
         >
           <li key={0} className="cursor-pointer my-4 md:my-0 text-sm max-w-fit text-white bg-gray-600 p-1 rounded-lg">
             Online Status: {onlineStatus}
@@ -64,7 +64,7 @@ const Header = () => {
           </li>
           <li
             key={7}
-            className="cursor-pointer border-solid border border-gray-500 px-12 w-fit h-fit hover:bg-orange-200 hover:ease-in-out rounded-lg"
+            className="cursor-pointer border-solid border border-gray-500 min-w-fit text-center w-28 h-fit hover:bg-orange-200 hover:ease-in-out rounded-lg"
           >
             <button
               className="log-button w-fit"

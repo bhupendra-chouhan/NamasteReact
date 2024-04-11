@@ -5,7 +5,8 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 import UserContext from "../utils/contexts/UserContext";
-import { disconnect } from "process";
+import {Provider} from "react-redux"
+import appStore from "../utils/store/appStore";
 /*
 Basic Components Layout for out app:
 
@@ -39,27 +40,28 @@ const AppLayout = () => {
 
   const onlineStatus = useOnlineStatus();
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, _setUserName }}> 
-      {/* Overriding the 'loggedInUser' value present inside the 'UserContext.js' context and also adding/passing '_setUserName' method to the context  . (Providing context to all the components) */}
-      {/* Here loggedInUser = "Hero Hu" */}
-      <div className="app">
-        
-        {/* <UserContext.Provider value={{ loggedInUser: "Thomas Edison" }}> */}
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, _setUserName }}>
+        {/* Overriding the 'loggedInUser' value present inside the 'UserContext.js' context and also adding/passing '_setUserName' method to the context  . (Providing context to all the components) */}
+        {/* Here loggedInUser = "Hero Hu" */}
+        <div className="app">
+          {/* <UserContext.Provider value={{ loggedInUser: "Thomas Edison" }}> */}
           {/* Providing nested 'UserContext' and Overriding the 'loggedInUser' value (Providing context to only the 'Header' component) */}
           {/* Here loggedInUser = "Thomas Edison" */}
           <Header />
-        {/* </UserContext.Provider> */}
-        
-        <div className="mt-28">
-          {onlineStatus === "🔴 Not Connected" ? (
-            <h1>You are offline. Please check your connection!!..</h1>
-          ) : (
-            <Outlet />
-          )}
+          {/* </UserContext.Provider> */}
+
+          <div className="md:mt-28">
+            {onlineStatus === "🔴 Not Connected" ? (
+              <h1>You are offline. Please check your connection!!..</h1>
+            ) : (
+              <Outlet />
+            )}
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </UserContext.Provider>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
