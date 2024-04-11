@@ -42,7 +42,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body flex flex-col justify-center">
-      <div className="flex flex-col md:flex-row w-max my-3 mx-auto">
+      <div className="flex flex-col items-center md:flex-row w-max my-3 mx-auto">
         {/* Search Box */}
         <div className="p-3 flex w-max justify-between rounded-xl">
           <input
@@ -92,9 +92,9 @@ const Body = () => {
           </button>
         </div>
 
-        <div className="p-3 flex w-max justify-between rounded-xl">
+        <div className="p-3 w-max rounded-xl">
           <input
-            className="mx-2 px-2 border border-gray-600 rounded-xl"
+            className="mx-auto p-1 px-2 w-full border border-gray-600 rounded-xl"
             placeholder="Set new username "
             value={loggedInUser}
             onChange={(e) => {

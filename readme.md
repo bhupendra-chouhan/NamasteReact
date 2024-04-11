@@ -714,4 +714,129 @@ NOTE: I have build 'Accoridians' to show different food categories of a restaura
 3) We can create context multiple context, anywhere in the app and we can also override any context, anywhere we want to in our app.
 4) Context is a global space, I can either provide it to a specific component or to the the whole app.
 5) ContexAPI are used to make the state globally available and are mostly used in small-to-mid size projects. For bigger and complex projects in industry we used an external library known as 'Redux', for doing the state-management in out app. 
- 
+
+---
+
+## Episode: 12 (Let's Build our Store )
+
+## Some libraries used to do state management?
+
+1) Redux
+2) Zustand
+3) Flux
+
+### What is Redux?
+
+1. Redux is an open-source Javascript library, which is used for state management in an a.
+
+2. Redux stores the entire state of the application in a single immutable object called the "store" or "Redux-store" and state changes are managed through actions and reducers.
+
+3. **Actions** describe what happened, and **reducers** specify how the state should change in response to those actions. This unidirectional flow of data makes it easier to understand and manage the application's state.
+
+4. React (works on UI Layer), while
+5. Redux (works on Data Layer)
+
+### Redux Libraries and their usecase?
+
+1. React-Redux:
+   Bridges the gap between React and Redux, enabling seamless integration between the two.
+   It allows React components to interact with the Redux store, subscribing to changes in the state and dispatching actions.
+
+2. Redux-Toolkit:
+   Redux Toolkit streamlines the process of working with Redux by reducing boilerplate code
+
+### Redux Store?
+
+1. It's a large object of all the state of our application. And It's kept in a centeral global centeral place
+2. Any React component can directly access it.
+3. When we store huge amount of data in redux-store, and it becomes clumsy then we have **slices** in our code.
+
+### What is a slice?
+
+1. **Slice/s** : Its a small portion of react-store.
+2. We make different slices in a react-store for different type of data: like 'User profile Information' will have a 'User slice', 'cart information' will have a 'cart slice'.
+3. We can't modify a slice directly.
+   Let's say we want to create a **'Add to cart'** feature, and we want to update the items in the cart.
+
+   The **WRITE** process:
+
+   1. When you **click on the 'Add Button'**, it **'Dispatches'** an **'Action'**
+   2. This **Action call a funtions** and **this function(aka Reducer) will actually modifies the cart slice**.
+
+   The **READ** process:
+
+   1. We use **Selector** to make the component subscribed to a slice in the store.
+   2. When the data in the slice update, the respective component gets rerendered.
+   3. **Selector** makes the **component in sync with the store**
+
+### Steps to Build our Store?
+
+1. Install React-Redux and Redux-Toolkit: `npm install @reduxjs/toolkit` && `npm install react-redux`
+2. Build our own store.
+3. **Bridging**: Connect our store to our app, using <Provider> wrapper from 'react-redux'.
+4. Create a Slice(cartSlice)
+5. Add Slice to the store
+6. Read the data using **Selector** (via **useSelector** Hook)
+7. Dispatch an **Action** (via **useDispatch** Hook)
+
+### What is a Reducer Function?
+
+In Redux, a reducer is a named function responsible for specifying how the application's state changes in response to dispatched actions. The reducer function takes the current state and an action as arguments and returns the new state.
+
+### Things to remember while using useSelector()?
+
+1. useSelector() is used to read the 'state of a selected slice' or 'the whole store' on that point of time.
+
+2. useSelector is used to subscribe a portion(aka slice) of a store.
+
+3. The component using useSelector() will re-render whenever the selected data changes.
+
+4. Performance Tips:
+
+```
+  <!-- BETTER/Efficient Approach is selecting the specific slice with which we want to sync our UI, because here the UI will rerender only if the state of selected slice changes  -->
+
+  const cartItems = useSelector((store) => store.cart.items);
+
+```
+
+```
+   <!-- BAD Approach because here the UI will rerender even if state of slice other than that we want to target changes-->
+
+   const wholeStore = useSelector((store) => store);
+   const cartItems = wholeStore.cart.items;
+```
+
+### Q) Imagine you are working on a large-scale React application, and you encounter performance issues due to excessive re-rendering. How would you approach identifying and resolving this problem? Share your thought process and potential solutions.
+
+Ans)
+Steps I’ll follow:
+
+#### 1) Observation Phase:
+
+• Firstly, I will examine the component hierarchy and identify the component causing unwanted re-renders.
+
+#### 2) Finding Reason Phase:
+
+• Now will try to find the specific reason behind the excessive re-rendering component.
+• NOTE: Every time either the state or props of a component are updated, that component gets re-rendered. Some of the situations leading to unwanted re-rendering are mentioned below:
+a. Prop Drilling: This process can cause excessive re-rendering problem when a React app doesn't use a state management library like Redux.
+b. Over Subscription: If a component subscribes to excessive amount of data from a redux store, then this can result in unnecessary re-renders.
+
+#### 3) Solution Phase:
+
+a. Using state management libraries like Redux to manage centralized state in a predictable and centralized manner helps avoid prop drilling.
+b. Ensuring that components are subscribed only to the state and data that they specifically need from the store.
+
+#### 4) Optimization Phase
+
+a. Using Pure Components with immutable data can boost the performance, as it only gets re-rendered when it finds any type of difference after an automatic shallow comparison of state and props.
+b. Using frameworks like NextJS which unlike ReactJS offers SSR(Server Side Rendering) where initial rendering occurs on the server, can boost performance and is also beneficial for SEO.
+
+### How Redux uses Immer library behind the scenes?
+
+1. Redux states are immutable.
+2. Redux uses the Immer library behind the scenes to simplify the process of updating immutable state. Immer allows Redux reducers to write code that looks like mutable state updates, but actually produces immutable updates under the hood. This makes it easier to work with immutable data structures in Redux without having to write boilerplate code for deep copying and updating objects.
+
+### RTK Query v/s "Redux Thunk with Middleware"?
+RTK Query provides a more streamlined and opinionated approach for handling data fetching and caching specifically, while Redux Thunk with middleware offers more flexibility for customizing asynchronous logic across different parts of your Redux application. RTK Query is often preferred for simpler data fetching scenarios, while Redux Thunk is useful for more complex asynchronous workflows.
