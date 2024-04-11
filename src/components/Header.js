@@ -63,9 +63,13 @@ const Header = () => {
             key={5}
             className="cursor-pointer text-orange-500 hover:text-violet-500 text-3xl "
           >
-            <Link to="/my-cart" className="flex items-end">
-              <ion-icon name="cart-outline"></ion-icon>
-              <span className="text-2xl">({cartItemsCount})</span>
+            <Link to="/my-cart" className="flex">
+              {cartItemsCount === 0 ? (
+                <ion-icon name="cart-outline"></ion-icon>
+              ) : (
+                <ion-icon name="cart"></ion-icon>
+              )}
+              <span className="text-lg">({cartItemsCount})</span>
             </Link>
           </li>
           <li key={6} className="cursor-pointer hover:text-blue-500">
