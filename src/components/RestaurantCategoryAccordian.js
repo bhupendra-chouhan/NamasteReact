@@ -19,7 +19,7 @@ const RestaurantCategoryAccordian = ({
 
   return (
     <div
-      className="w-[60%] p-4 m-4 bg-gray-100 rounded-lg shadow-lg shadow-black"
+      className="w-[90%] xl:w-[60%] p-4 m-4 bg-gray-100 rounded-lg shadow-lg shadow-black"
       key={data.title}
     >
       {/* Header */}
