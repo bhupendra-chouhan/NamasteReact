@@ -522,7 +522,7 @@ Lifecycle phases of clas based componenets are:
 
    b. `componentDidCatch()`: Invoked after an error has been thrown in a descendant component.
 
-\***\*React Lifecycle method Diagram** 👉 [Click Here](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+**React Lifecycle method Diagram** 👉 [Click Here](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 ### When to use componentDidMount(){} lifecycle method?
 
@@ -768,6 +768,10 @@ NOTE: I have build 'Accoridians' to show different food categories of a restaura
    1. We use **Selector** to make the component subscribed to a slice in the store.
    2. When the data in the slice update, the respective component gets rerendered.
    3. **Selector** makes the **component in sync with the store**
+
+### **Redux Flow in an app (Diagram) 👇**  :-
+![Redux Flow Diagram](https://i.imgur.com/ZaxHZPo.jpg)
+</div>
 
 ### Steps to Build our Store?
 
