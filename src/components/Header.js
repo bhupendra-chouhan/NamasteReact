@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 import UserContext from "../utils/contexts/UserContext";
+import {useSelector} from "react-redux"
 
 const Header = () => {
   const [logIn, setlogIn] = useState(false);
@@ -13,6 +14,8 @@ const Header = () => {
 
   const {loggedInUser} = useContext(UserContext)
   // console.log(loggedInUser);
+
+  const cartItemsCount = useSelector(store => store.cart.cartItems.length)
   
   // console.log("Header Rendered");
 
@@ -38,7 +41,10 @@ const Header = () => {
           } flex flex-col md:flex-row md:justify-around text-nowrap md:pb-0 pb-3 absolute md:static
           bg-white md:bg-[transparent] md:gap-5 w-full md:w-auto pl-3 md:border-none border-2 border-blue-400 rounded-b-2xl transition-all duration-500 ease-in-out z-10`}
         >
-          <li key={0} className="cursor-pointer my-4 md:my-0 text-sm max-w-fit text-white bg-gray-600 p-1 rounded-lg">
+          <li
+            key={0}
+            className="cursor-pointer my-4 md:my-0 text-sm max-w-fit text-white bg-gray-600 p-1 rounded-lg"
+          >
             Online Status: {onlineStatus}
           </li>
           <li key={1} className="cursor-pointer hover:text-blue-500">
@@ -53,10 +59,13 @@ const Header = () => {
           <li key={4} className="cursor-pointer hover:text-blue-500">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li key={5} className="cursor-pointer text-orange-500 hover:text-violet-500 text-3xl ">
+          <li
+            key={5}
+            className="cursor-pointer text-orange-500 hover:text-violet-500 text-3xl "
+          >
             <Link to="/my-cart" className="flex items-end">
               <ion-icon name="cart-outline"></ion-icon>
-              <span className="text-2xl">()</span>
+              <span className="text-2xl">({cartItemsCount})</span>
             </Link>
           </li>
           <li key={6} className="cursor-pointer hover:text-blue-500">
