@@ -844,3 +844,10 @@ b. Using frameworks like NextJS which unlike ReactJS offers SSR(Server Side Rend
 
 ### RTK Query v/s "Redux Thunk with Middleware"?
 RTK Query provides a more streamlined and opinionated approach for handling data fetching and caching specifically, while Redux Thunk with middleware offers more flexibility for customizing asynchronous logic across different parts of your Redux application. RTK Query is often preferred for simpler data fetching scenarios, while Redux Thunk is useful for more complex asynchronous workflows.
+
+### Actions v/s Reducer in Redux?
+**Actions:**
+There are basically object which contains the information about the change in any state.
+
+**Reducer:**
+Reducer are basically JavaScript functions which defines how the state will change in response to the dispatched action.

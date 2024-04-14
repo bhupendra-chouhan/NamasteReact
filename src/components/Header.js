@@ -12,11 +12,13 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const handleOpenMenu = () => setOpen(!open);
 
-  const {loggedInUser} = useContext(UserContext)
+  const { loggedInUser } = useContext(UserContext);
   // console.log(loggedInUser);
 
-  const cartItemsCount = useSelector(store => store.cart.cartItems.length)
-  
+  // Subscribing to the store:
+  const cartItemsCount = useSelector((store) => store.cart.cartItems.length);
+  // console.log(cartItemsCount);
+
   // console.log("Header Rendered");
 
   return (
